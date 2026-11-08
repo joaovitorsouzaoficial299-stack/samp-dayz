@@ -4,7 +4,7 @@
 	Created by: Kitten aka AldenJ aka AaronN
 	Created date: 1/1/12
 	Created time: 3:41 PM
-	Name: GTA SA: DayZ Version
+	Nome: GTA SA: DayZ Version
 	Saving: MySQL
 	Version: 15.0
 	Website: www.pgagaming.net
@@ -4067,7 +4067,7 @@ public OnGameModeInit()
     SetTimer("Airdrop", 480000, true);
 	SetGameModeText(""Version" Loading");
 	SendRconCommand("hostname "Name" Loading Variables!");
-	SendRconCommand("language Zombies: 100");
+	SendRconCommand("language Zumbis: 100");
 	SendRconCommand("weburl "Web"");
 	AddPlayerClass(29, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
 
@@ -4235,20 +4235,20 @@ timer UpdatePlayer[1000]()
 
 		                    if(IsSpecing[i] == 0)
 		                    {
-								format(strupdate,sizeof(strupdate),"Zombies Killed: %i~n~Headshots: %i~n~Murders: %i~n~Bandits Killed: %i~n~Blood: %i~n~Zombies: %i~n~Temperature: %0.2f F~n~Alive Time: %s~n~Name: %s",
+								format(strupdate,sizeof(strupdate),"Zumbis mortos: %i~n~Tiros na cabeca: %i~n~Assassinatos: %i~n~Bandidos mortos: %i~n~Sangue: %i~n~Zumbis: %i~n~Temperatura: %0.2f F~n~Tempo vivo: %s~n~Nome: %s",
 								pInfo[i][ZombiesKilled],pInfo[i][Headshots],pInfo[i][Murders],pInfo[i][BanditsKilled],pInfo[i][pBlood],ZombiesAlive,pInfo[i][pTemp],TimeConvert(pInfo[i][pAliveTime]),PlayerName(i));
-		                        format(strwep, sizeof(strwep), "%s / %i Ammo", DayZSA_GetWeaponName(i),GetPlayerAmmo(i));
+		                        format(strwep, sizeof(strwep), "%s / %i Municao", DayZSA_GetWeaponName(i),GetPlayerAmmo(i));
 								PlayerTextDrawSetString(i,DebugInfo[i],strupdate);
 								PlayerTextDrawSetString(i,Debug_GunInfo[i],strwep);
 							}
 							else
 							{
-								format(strupdate,sizeof(strupdate),"Zombies Killed: %i~n~Headshots: %i~n~Murders: %i~n~Bandits Killed: %i~n~Zombies: %i~n~Temperature: %0.2f F~n~Alive Time: %s~n~Name: %s",
+								format(strupdate,sizeof(strupdate),"Zumbis mortos: %i~n~Tiros na cabeca: %i~n~Assassinatos: %i~n~Bandidos mortos: %i~n~Zumbis: %i~n~Temperatura: %0.2f F~n~Tempo vivo: %s~n~Nome: %s",
 								pInfo[spectatorid[i]][ZombiesKilled],pInfo[spectatorid[i]][Headshots],pInfo[spectatorid[i]][Murders],pInfo[spectatorid[i]][BanditsKilled],ZombiesAlive,pInfo[spectatorid[i]][pTemp],TimeConvert(pInfo[spectatorid[i]][pAliveTime]),PlayerName(spectatorid[i]));
-								format(strwep, sizeof(strwep), "%s / %i Ammo", DayZSA_GetWeaponName(spectatorid[i]),GetPlayerAmmo(spectatorid[i]));
+								format(strwep, sizeof(strwep), "%s / %i Municao", DayZSA_GetWeaponName(spectatorid[i]),GetPlayerAmmo(spectatorid[i]));
 								PlayerTextDrawSetString(i,DebugInfo[i],strupdate);
 								PlayerTextDrawSetString(i,Debug_GunInfo[i],strwep);
-								//format(strupdate,sizeof(strupdate),"Zombies Killed: %i~n~Headshots: %i~n~Murders: %i~n~Bandits Killed: %i~n~Blood: %i~n~Zombies Alive: %i(%i)~n~Temperature: %0.2f F~n~Alive Time: %s~n~Wep: %s / %i AMMO~n~Name: %s",
+								//format(strupdate,sizeof(strupdate),"Zumbis mortos: %i~n~Tiros na cabeca: %i~n~Assassinatos: %i~n~Bandidos mortos: %i~n~Sangue: %i~n~Zumbis vivos: %i(%i)~n~Temperatura: %0.2f F~n~Tempo vivo: %s~n~Wep: %s / %i AMMO~n~Nome: %s",
 								//pInfo[spectatorid[i]][ZombiesKilled], pInfo[spectatorid[i]][Headshots],pInfo[spectatorid[i]][Murders],pInfo[spectatorid[i]][BanditsKilled],pInfo[spectatorid[i]][pBlood],ZombiesAlive,ZombieMax,pInfo[spectatorid[i]][pTemp],TimeConvert(pInfo[spectatorid[i]][pAliveTime]),DayZSA_GetWeaponName(i),GetPlayerAmmo(i),PlayerName(i));
 							}
 
@@ -4261,7 +4261,7 @@ timer UpdatePlayer[1000]()
 
 			                if(GetPlayerPing(i) >= 850)
 			                {
-			                    SendClientMessage(i, -1, ""chat""COL_RED" You have been kicked. Reason: High Ping Over 850");
+			                    SendClientMessage(i, -1, ""chat""COL_RED" Voce foi expulso. Motivo: ping acima de 850");
 			                    KickEx(i);
 							}
 
@@ -4292,9 +4292,9 @@ timer UpdatePlayer[1000]()
 							    new str2[180];
 		     					pInfo[i][pInfection] = 0;
 		     					pInfo[i][pTemp] = 100.0;
-								format(str2,sizeof(str2),"*"COL_RED" %s(%i) has freezed to death!",PlayerName(i),i);
+								format(str2,sizeof(str2),"*"COL_RED" %s(%i) morreu de frio!",PlayerName(i),i);
 								ProxDetector(60.0, i, str2, COLOR_GREY);
-								SendClientMessage(i,-1,"*"COL_RED" You freezed to death!");
+								SendClientMessage(i,-1,"*"COL_RED" Voce morreu de frio!");
 							    SetPlayerHealth(i, 0.0);
 							}
 
@@ -4432,7 +4432,7 @@ timer UpdatePlayer[1000]()
 
 							if(PlayerHasItem(i,"Coyote Patrol Pack"))
 							{
-								SendClientMessage(i,-1,"*"COL_RED" You already have an larger backpack!");
+								SendClientMessage(i,-1,"*"COL_RED" Voce ja tem uma mochila maior!");
 								RemoveSlotToInventory(i,"Coyote Patrol Pack",1);
 							}
 
@@ -4440,7 +4440,7 @@ timer UpdatePlayer[1000]()
 							{
 							    if(pInfo[i][BackpackSlots] >= 28)
 							    {
-									SendClientMessage(i,-1,"*"COL_RED" You already have an larger backpack!");
+									SendClientMessage(i,-1,"*"COL_RED" Voce ja tem uma mochila maior!");
 									RemoveSlotToInventory(i,"Czech Vest Pouch",1);
 								}
 								else
@@ -4462,7 +4462,7 @@ timer UpdatePlayer[1000]()
 							{
 							    if(pInfo[i][BackpackSlots] >= 38)
 							    {
-									SendClientMessage(i,-1,"*"COL_RED" You already have an larger backpack!");
+									SendClientMessage(i,-1,"*"COL_RED" Voce ja tem uma mochila maior!");
 									RemoveSlotToInventory(i,"Alice Pack",1);
 								}
 								else
@@ -4638,7 +4638,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float: amount, weaponid)
 	    PlayerTextDrawShow(playerid, Indicator[playerid]);
 
 	    new str[50];
-	    format(str,sizeof(str),"HIT: %d hit(s) %.0f dmg", hit[playerid], damage2[playerid]);
+	    format(str,sizeof(str),"HIT: %d acerto(s) %.0f dmg", hit[playerid], damage2[playerid]);
 	    PlayerTextDrawSetString(playerid, Indicator[playerid], str);
 	}
 	{
@@ -4747,7 +4747,7 @@ public OnPlayerGiveDamage(playerid, damagedid, Float: amount, weaponid, bodypart
 	PlayerTextDrawShow(playerid, Indicator1[playerid]);
 
 	new str[50];
-	format(str,sizeof(str)," DAMAGE: %d hit(s) %.0f dmg", hit1[playerid], damage1[playerid]);
+	format(str,sizeof(str)," DAMAGE: %d acerto(s) %.0f dmg", hit1[playerid], damage1[playerid]);
 	PlayerTextDrawSetString(playerid, Indicator1[playerid], str);
 
 
@@ -4899,7 +4899,7 @@ public OnPlayerAirbreak(playerid)
 	    {
 			abWarn[playerid]++;
 			new strab[250];
-			format(strab, sizeof(strab), ""chat""COL_RED" *** WARNING: Player %s(%i) might be airbraking please spectate him! /spec %i", PlayerName(playerid), playerid, playerid);
+			format(strab, sizeof(strab), ""chat""COL_RED" *** AVISO: Jogador %s(%i) pode estar usando airbreak. Observe-o! /spec %i", PlayerName(playerid), playerid, playerid);
 			SendMessageToAllAdmins(strab, -1);
 		}
 	}
@@ -4921,7 +4921,7 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
         if( !( -1000.0 <= fX <= 1000.0 ) || !( -1000.0 <= fY <= 1000.0 ) || !( -1000.0 <= fZ <= 1000.0 ) )
 		{
 		    new str[128];
-			format(str, sizeof(str), "** "COL_RED"Possible Bullet Crasher: %s(%i) PLEASE /spec %i",PlayerName(playerid), playerid, playerid);
+			format(str, sizeof(str), "** "COL_RED"Possivel ataque de balas: %s(%i) PLEASE /spec %i",PlayerName(playerid), playerid, playerid);
 			SendMessageToAllAdmins(str, -1);
 			return 0;
 		}
@@ -4935,16 +4935,16 @@ public OnPlayerWeaponEmpty(playerid, weaponid)
 	GetPlayerPos(playerid,fPos[0],fPos[1],fPos[2]);
 	switch(GetPlayerWeapon(playerid))
 	{
-	    case 25: wepname = "Shotgun", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Shotgun",fPos[0],fPos[1],fPos[2]);
-	    case 30: wepname = "AK-47", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("AK-47",fPos[0],fPos[1],fPos[2]);
-	    case 31: wepname = "M4", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("M4",fPos[0],fPos[1],fPos[2]);
-	    case 34: wepname = "Sniper Rifle", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Sniper Rifle",fPos[0],fPos[1],fPos[2]);
-	    case 33: wepname = "Country Rifle", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Country Rifle",fPos[0],fPos[1],fPos[2]);
-	    case 22: wepname = "Pistol", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Pistol",fPos[0],fPos[1],fPos[2]);
-	    case 27: wepname = "SPAZ-12 Shotgun", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("SPAZ-12 Shotgun",fPos[0],fPos[1],fPos[2]);
-	    case 29: wepname = "MP5", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("MP5",fPos[0],fPos[1],fPos[2]);
-	    case 23: wepname = "Silenced Pistol", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Silenced Pistol",fPos[0],fPos[1],fPos[2]);
-	    case 43: wepname = "Binoculars", SendClientMessage(playerid, -1, ""chat" You ran out ammo! Your weapon has been dropped"), DayZSA_CreateLootsFunction("Binoculars",fPos[0],fPos[1],fPos[2]);
+	    case 25: wepname = "Shotgun", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Shotgun",fPos[0],fPos[1],fPos[2]);
+	    case 30: wepname = "AK-47", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("AK-47",fPos[0],fPos[1],fPos[2]);
+	    case 31: wepname = "M4", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("M4",fPos[0],fPos[1],fPos[2]);
+	    case 34: wepname = "Sniper Rifle", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Sniper Rifle",fPos[0],fPos[1],fPos[2]);
+	    case 33: wepname = "Country Rifle", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Country Rifle",fPos[0],fPos[1],fPos[2]);
+	    case 22: wepname = "Pistol", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Pistol",fPos[0],fPos[1],fPos[2]);
+	    case 27: wepname = "SPAZ-12 Shotgun", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("SPAZ-12 Shotgun",fPos[0],fPos[1],fPos[2]);
+	    case 29: wepname = "MP5", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("MP5",fPos[0],fPos[1],fPos[2]);
+	    case 23: wepname = "Silenced Pistol", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Silenced Pistol",fPos[0],fPos[1],fPos[2]);
+	    case 43: wepname = "Binoculars", SendClientMessage(playerid, -1, ""chat" Sua municao acabou! Sua arma foi descartada"), DayZSA_CreateLootsFunction("Binoculars",fPos[0],fPos[1],fPos[2]);
 	}
 	return 1;
 }
@@ -4952,7 +4952,7 @@ public OnPlayerWeaponEmpty(playerid, weaponid)
 public OnPlayerResume(playerid, time)
 {
     new str[48];
-    format(str, sizeof(str), ""chat" You've been paused for %d milliseconds.", time);
+    format(str, sizeof(str), ""chat" Voce ficou pausado por %d milissegundos.", time);
     return SendClientMessage(playerid, -1, str);
 }
 
@@ -4965,7 +4965,7 @@ public OnPlayerConnect(playerid)
 	{
 /*		if(playerid <= 99)
 		{
-		    SendClientMessage(playerid, -1, ""COL_RED" CONNECTION ERROR OCCURED CONNECTING TO DayZ Link to pGA PLEASE RECONNECT!");
+		    SendClientMessage(playerid, -1, ""COL_RED" ERRO DE CONEXAO COM O SERVIDOR DAYZ. RECONECTE!");
 		    Kick(playerid);
 		}
 		else
@@ -5004,13 +5004,13 @@ public WhenAccountCheck(playerid, password[])
 			{
 			    new string[256];
 
-	         	format(string,sizeof(string),"{BECBFC}Welcome, {95A3FF}%s{BECBFC}!\nPlease enter your password below to login to your account.",PlayerName(playerid));
-				ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD,"DayZ Account Login",string,"Login","Exit");
+	         	format(string,sizeof(string),"{BECBFC}Bem-vindo, {95A3FF}%s{BECBFC}!\nDigite sua senha abaixo para entrar na conta.",PlayerName(playerid));
+				ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD,"Entrar na conta DayZ",string,"Entrar","Sair");
    			}
      	}
      	else
      	{
-     	    ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "DayZ Register", "DayZ Account Registration\nEnter your password below:", "Register", "Cancel");
+     	    ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Cadastro DayZ", "Cadastro de conta DayZ\nDigite sua senha abaixo:", "Register", "Cancel");
    		}
 	}
 
@@ -5039,7 +5039,7 @@ public OnPlayerRegister(playerid, password[])
 		pInfo[playerid][BackpackSlots] = 8;
 		pInfo[playerid][BackpackSlotsUsed] = 0;
 
-		ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD, "DayZ Login", "Please enter your password below to login to your account.", "Login", "Exit");
+		ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD, "Entrar no DayZ", "Digite sua senha abaixo para entrar na conta.", "Login", "Exit");
 	}
 	return 1;
 }
@@ -5125,14 +5125,14 @@ public WhenPlayerLogin(playerid)
 		}
 		else
 		{
-			ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "DayZ Login", "The passwords don't match!\nType your account's password below:", "Login", "Exit");
+			ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Entrar no DayZ", "As senhas nao conferem!\nDigite a senha da sua conta abaixo:", "Login", "Exit");
 	        return 1;
 		}
 
 		if(pInfo[playerid][pAmbientEnable] == 0)
 		{
 		    pInfo[playerid][pAmbientEnable] = 1;
-		    SendClientMessage(playerid, -1, ""chat" The ambient has been enabled, you can change this by default in the GAME OPTIONS menu!");
+		    SendClientMessage(playerid, -1, ""chat" O som ambiente foi ativado. Voce pode mudar isso nas OPCOES DO JOGO!");
 		}
 
 		printf("%s has logged in.", PlayerName(playerid));
@@ -5172,15 +5172,15 @@ public OnPlayerDisconnect(playerid, reason)
         DeletePlayerTD(playerid);
 
   		new log[128];
-	    format(log,sizeof(log),"~w~%s~b~ has disconnected",PlayerName(playerid));
+	    format(log,sizeof(log),"~w~%s~b~ se desconectou",PlayerName(playerid));
 	    UpdateAnnouncement(log);
 
 		new str[256];
 	  	switch(reason)
 	    {
-	        case 0: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) has left the server Reason: Timed Out",PlayerName(playerid),playerid);
-	        case 1: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) has left the server Reason: Leaving",PlayerName(playerid),playerid);
-	        case 2: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) has left the server Reason: Kicked/Banned",PlayerName(playerid),playerid);
+	        case 0: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) saiu do servidor. Motivo: tempo esgotado",PlayerName(playerid),playerid);
+	        case 1: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) saiu do servidor. Motivo: desconexao",PlayerName(playerid),playerid);
+	        case 2: format(str,sizeof(str),"*"COL_GREEN" Player %s(%i) saiu do servidor. Motivo: expulso/banido",PlayerName(playerid),playerid);
 	    }
 		SendMessageToAllAdmins(str,-1);
 
@@ -5250,16 +5250,16 @@ public OnPlayerSpawn(playerid)
 	  		if(pInfo[playerid][pLogged] == 1)
 	    	{
 		    	SpawnVars(playerid);
-	   			SendClientMessage(playerid, -1, ""chat" Zombies are now enabled");
+	   			SendClientMessage(playerid, -1, ""chat" Os zumbis foram ativados");
 				SetCameraBehindPlayer(playerid);
-	 			GameTextForPlayer(playerid, "~w~loading spawn...", 2800, 4);
+	 			GameTextForPlayer(playerid, "~w~carregando spawn...", 2800, 4);
 				SetPlayerColor(playerid,0xFFFFFF00);
 				PlayerTextDrawHide(playerid, MenuLogo[playerid]);
 				if(pInfo[playerid][pAmbientEnable] == 1)
 				if(pInfo[playerid][pKidnapped] == 1)
 	{
 	    TogglePlayerControllable(playerid,0);
-	    SendClientMessage(playerid,COLOR_RED,"WARNING: You are still tied with rope!");
+	    SendClientMessage(playerid,COLOR_RED,"AVISO: Voce ainda esta amarrado!");
 	}
 	  			{
 					if(timeMode == DAY)
@@ -5287,7 +5287,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 			new name[24], kname[30], string[64];
 			GetPlayerName(playerid, name, 24);
 			GetPlayerName(killerid, kname, 30);
-			format(string, sizeof(string), "%s Has been killed by %s", name,kname,reason);
+			format(string, sizeof(string), "%s foi morto por %s", name,kname,reason);
 			SendMessageToAllAdmins(string, -1);
 		}
 	}
@@ -5313,7 +5313,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				    if(pInfo[killerid][IsPlayerHero] == 0)
 				    {
 				 		SetPlayerSkin(killerid,HERO);
-					    SendClientMessage(killerid,-1,""COL_GREY" You are a hero now!");
+					    SendClientMessage(killerid,-1,""COL_GREY" Agora voce e um heroi!");
 					    ClearAnimations(killerid);
 		                pInfo[killerid][IsPlayerHero] = 1;
 					}
@@ -5330,7 +5330,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				    if(pInfo[killerid][IsPlayerBandit] == 0)
 				    {
 			 			SetPlayerSkin(killerid,BANDIT);
-				    	SendClientMessage(killerid,-1,""COL_GREY" You are a bandit now!");
+				    	SendClientMessage(killerid,-1,""COL_GREY" Agora voce e um bandido!");
 				    	ClearAnimations(killerid);
 						pInfo[killerid][IsPlayerBandit] = 1;
 					}
@@ -5347,7 +5347,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				    if(pInfo[killerid][IsPlayerBandit] == 0)
 				    {
 			 			SetPlayerSkin(killerid,BANDIT);
-				    	SendClientMessage(killerid,-1,""COL_GREY" You are a bandit now!");
+				    	SendClientMessage(killerid,-1,""COL_GREY" Agora voce e um bandido!");
 				    	ClearAnimations(killerid);
 						pInfo[killerid][IsPlayerBandit] = 1;
 					}
@@ -5364,7 +5364,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 				    if(pInfo[killerid][IsPlayerBandit] == 0)
 				    {
 			 			SetPlayerSkin(killerid,BANDIT);
-				    	SendClientMessage(killerid,-1,""COL_GREY" You are a bandit now!");
+				    	SendClientMessage(killerid,-1,""COL_GREY" Agora voce e um bandido!");
 				    	ClearAnimations(killerid);
 						pInfo[killerid][IsPlayerBandit] = 1;
 					}
@@ -5373,7 +5373,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 
 		 	if(IsPlayerAimingTargetBodyPart(killerid, playerid, BODY_PART_HEAD))
 			{
-		  		GameTextForPlayer(killerid, "~r~~h~Head shot!", 3000, 3);
+		  		GameTextForPlayer(killerid, "~r~~h~Tiro na cabeca!", 3000, 3);
 		  		pInfo[killerid][Headshots]++;
 			}
 		}
@@ -5384,7 +5384,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 		TeleportAllowed[playerid] = 1;
 		abAllow[playerid] = 1;
 		new str[128];
-		format(str,sizeof(str),"%s is now~r~ dead!",PlayerName(playerid));
+		format(str,sizeof(str),"%s morreu!",PlayerName(playerid));
 		UpdateAnnouncement(str);
 
 		new Float:fPos[3];
@@ -5460,10 +5460,10 @@ public OnPlayerDeath(playerid, killerid, reason)
         {
             pInfo[playerid][pInfection] = 0;
             new str2[180];
-			format(str2,sizeof(str2),"*"COL_RED" %s(%i) has suffered from an infection and died!",PlayerName(playerid),playerid);
+			format(str2,sizeof(str2),"*"COL_RED" %s(%i) morreu por causa de uma infeccao!",PlayerName(playerid),playerid);
 			ProxDetector(60.0, playerid, str2, COLOR_GREY);
-			SendClientMessage(playerid,-1,"*"COL_RED" You suffered from an infection!");
-			PlayerTextDrawSetString(playerid, LegBroken[playerid], "Broken Leg");
+			SendClientMessage(playerid,-1,"*"COL_RED" Voce sofreu uma infeccao!");
+			PlayerTextDrawSetString(playerid, LegBroken[playerid], "Perna quebrada");
 			PlayerTextDrawHide(playerid, LegBroken[playerid]);
 			SetPlayerDrunkLevel(playerid, 0);
 			KillTimer(pInfo[playerid][Bleeding]);
@@ -5505,7 +5505,7 @@ public OnPlayerText(playerid, text[])
 {
     if(pInfo[playerid][IsPlayerMuted] == 1)
     {
-        SendClientMessage(playerid,-1,"*"COL_RED" You are muted!");
+        SendClientMessage(playerid,-1,"*"COL_RED" Voce esta silenciado!");
 	}
 	else
 	{
@@ -5513,12 +5513,12 @@ public OnPlayerText(playerid, text[])
 
 		if(pInfo[playerid][pPremium] == 0)
 		{
- 			format(message, sizeof(message), "%s says: %s", PlayerName(playerid), text);
+ 			format(message, sizeof(message), "%s diz: %s", PlayerName(playerid), text);
 	    	ProxDetector(20.0, playerid, message, COLOR_GREY);
 		}
 		else
 		{
- 			format(message, sizeof(message), ""COL_WHITE"[%s]"COL_GREY" %s says: %s",GetPremiumName(playerid),PlayerName(playerid), text);
+ 			format(message, sizeof(message), ""COL_WHITE"[%s]"COL_GREY" %s diz: %s",GetPremiumName(playerid),PlayerName(playerid), text);
 	    	ProxDetector(30.0, playerid, message, COLOR_GREY);
 		}
 
@@ -5761,7 +5761,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			if(pInfo[playerid][pIsMapOpened] == 0)
 			{
 		    	PlayerTextDrawShow(playerid, Map[playerid]);
-		    	SendClientMessage(playerid,-1,"*"COL_RED" Press numpad1/middle mouse button again to disabled");
+		    	SendClientMessage(playerid,-1,"*"COL_RED" Pressione numpad1/botao do meio novamente para desativar");
 		    	pInfo[playerid][pIsMapOpened] = 1;
 			}
 			else return pInfo[playerid][pIsMapOpened] = 0,PlayerTextDrawHide(playerid, Map[playerid]);
@@ -5774,7 +5774,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		{
 		    if(pInfo[playerid][IsPlayerDrunk] == 0)
 		    {
-		    	if(gettime() - 5 < pInfo[playerid][pProneSpam]) return SendClientMessage(playerid,-1,"*"COL_RED" Don't prone abuse!");
+		    	if(gettime() - 5 < pInfo[playerid][pProneSpam]) return SendClientMessage(playerid,-1,"*"COL_RED" Nao abuse da posicao deitado!");
 				{
 			    	ApplyAnimation(playerid,"WUZI","CS_Dead_Guy",4.1,1,1,1,1,0,1);
 				    pInfo[playerid][pProne] = 1;
@@ -5810,7 +5810,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				    new engine_but, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but;
 					GetVehicleParamsEx(GetPlayerVehicleID(playerid), engine_but, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but);
 					SetVehicleParamsEx(GetPlayerVehicleID(playerid), 0, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but);
-					SendClientMessage(playerid, -1, ""chat" Vehicle engine has stopped!");
+					SendClientMessage(playerid, -1, ""chat" O motor do veiculo parou!");
 				}
 
 				if(engine == 0)
@@ -5818,7 +5818,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				    new engine_but, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but;
 					GetVehicleParamsEx(GetPlayerVehicleID(playerid), engine_but, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but);
 					SetVehicleParamsEx(GetPlayerVehicleID(playerid), 1, lights_but, alarm_but, doors_but, bonnet_but, boot_but, objective_but);
-					SendClientMessage(playerid, -1, ""chat" Vehicle engine has started!");
+					SendClientMessage(playerid, -1, ""chat" O motor do veiculo ligou!");
 				}
 			}
 	    }
@@ -5862,7 +5862,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
         {
             AddSlotToInventoryWorld(playerid, "Cooked Meat", 1);
             RemoveSlotToInventory(playerid, "Raw Meat", 1);
-            SendClientMessage(playerid, -1, ""chat" Sucessfully cooked raw Meat! Check your inventory!");
+            SendClientMessage(playerid, -1, ""chat" Carne cozida com sucesso! Confira o inventario!");
         }
     }
 }
@@ -5873,9 +5873,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
        		 {
             AddSlotToInventoryWorld(playerid, "Full Water Bottle", 1);
             RemoveSlotToInventory(playerid, "Dirty Water Bottle", 1);
-            SendClientMessage(playerid, -1, ""chat" Sucessfully boiled Water! Check your inventory!");
+            SendClientMessage(playerid, -1, ""chat" Agua fervida com sucesso! Confira o inventario!");
         }
-        else return SendClientMessage(playerid, -1, ""chat", You have nothing to boil!");
+        else return SendClientMessage(playerid, -1, ""chat", Voce nao tem nada para ferver!");
     }
 }
 
@@ -5894,9 +5894,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				Tent[GetTentID(playerid)][yTent] = 0.0;
 				Tent[GetTentID(playerid)][zTent] = 0.0;
 				pInfo[playerid][pTentCreated] = 0;
-				SendClientMessage(playerid, -1, "*"COL_RED" Tent sucessfully destroyed.");
+				SendClientMessage(playerid, -1, "*"COL_RED" Barraca destruida com sucesso.");
 			}
-            else return SendClientMessage(playerid,-1,"*"COL_RED" You need a toolbox to destroy this tent");
+            else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa de uma caixa de ferramentas para destruir a barraca");
 		}
 	}
 
@@ -5928,9 +5928,9 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				{
 	                RemoveSlotToInventory(playerid,"Empty Jerry Can",1);
 				    AddSlotToInventoryWorld(playerid,"Full Jerry Can",1);
-				    SendClientMessage(playerid,-1,""chat" You filled the cainster with fuel!");
+				    SendClientMessage(playerid,-1,""chat" Voce encheu o galao de combustivel!");
 				}
-				else return SendClientMessage(playerid,-1,""chat" You need to have empty Jerry Can to add fuel into your cainster!");
+				else return SendClientMessage(playerid,-1,""chat" Voce precisa de um galao vazio para abastecer!");
 			}
 		}
 	}
@@ -6118,7 +6118,7 @@ public OnPlayerUpdate(playerid)
 	    {
 	        new msg[128];
 	        GetAnimationName(GetPlayerAnimationIndex(playerid),animlib,32,animname,32);
-	        format(msg, 128, "Animation: %s %s", animlib, animname);
+	        format(msg, 128, "Animacao: %s %s", animlib, animname);
 	        SendClientMessage(playerid, 0xFFFFFFFF, msg);
 	    }*/
 
@@ -6204,7 +6204,7 @@ public OnPlayerUpdate(playerid)
 
 	    if(X >= 99999.0 || Y >= 99999.0 || Z >= 99999.0 || X <= -99999.0 || Y <= -99999.0 || Z <= -99999.0)
 		{
-	        SendClientMessage(playerid, 0xa9c4e4ff, "Warning: Excessive X, Y, Z has been breached thus last location set.");
+	        SendClientMessage(playerid, 0xa9c4e4ff, "Aviso: Coordenadas invalidas. Mantendo a ultima posicao.");
 	        SetPlayerPos_Allow(playerid, p_PlayerBuggerX[playerid], p_PlayerBuggerY[playerid], p_PlayerBuggerZ[playerid]);
 	    }
 	    else
@@ -6328,7 +6328,7 @@ public OnVehicleStreamOut(vehicleid, forplayerid)
 
 public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 {
-    if(strfind(inputtext, "%") != -1) return SendClientMessage(playerid, -1, "*"COL_RED" Go crash another server douche!"),KickEx(playerid);
+    if(strfind(inputtext, "%") != -1) return SendClientMessage(playerid, -1, "*"COL_RED" Tentativa de travar o servidor detectada!"),KickEx(playerid);
     switch(dialogid)
     {
 		case DIALOG_LOGIN:
@@ -6342,20 +6342,20 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
      		{
  		    	if(strfind(inputtext, "'", true) != -1)
   		    	{
-					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "DayZ Login", "Type your account's password below:", "Login", "Exit");
+					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Entrar no DayZ", "Digite a senha da sua conta abaixo:", "Login", "Exit");
 				}
     			new tmppass[64];
     			mysql_real_escape_string(inputtext, tmppass);
     			if(strlen(tmppass) < 3)
  		    	{
-					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD,"DayZ Login", "Type your account's password below:", "Login", "Exit");
+					ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD,"Entrar no DayZ", "Digite a senha da sua conta abaixo:", "Login", "Exit");
 				}
 
 				OnPlayerAccountLogin(playerid, tmppass);
 			}
  			else
   			{
-				ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "DayZ Login", "Type your account's password below:", "Login", "Exit");
+				ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Entrar no DayZ", "Digite a senha da sua conta abaixo:", "Login", "Exit");
   			}
 		}
 
@@ -6376,8 +6376,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			    if(strlen(tmppass) < 3)
 				{
-	       			format(string,sizeof(string),"{BECBFC}Welcome, {95A3FF}%s{BECBFC}!\n\nPlease enter your password below to login to your account.",PlayerName(playerid));
-					ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD,"DayZ Login", string, "Login", "Exit");
+	       			format(string,sizeof(string),"{BECBFC}Bem-vindo, {95A3FF}%s{BECBFC}!\n\nDigite sua senha abaixo para entrar na conta.",PlayerName(playerid));
+					ShowPlayerDialog(playerid, DIALOG_LOGIN ,DIALOG_STYLE_PASSWORD,"Entrar no DayZ", string, "Login", "Exit");
 				}
 				OnPlayerRegister(playerid,tmppass);
 			}
@@ -6393,7 +6393,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		            {
 						new strlist[180];
 						strcat(strlist, "Police Cap - 5 Coins\nRed Hockey Mask - 15 Coins\nArmy Helmet - 20 Coins\n");
-						ShowPlayerDialog(playerid, DIALOG_PLAYERITEMS, DIALOG_STYLE_LIST, "Select one of the following Player Items", strlist, "Purchase", "Cancel");
+						ShowPlayerDialog(playerid, DIALOG_PLAYERITEMS, DIALOG_STYLE_LIST, "Selecione um dos itens de jogador", strlist, "Purchase", "Cancel");
 					}
 				}
 			}
@@ -6413,14 +6413,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			        	/version - SA:MP version\n/getidid - Get a persons ID\n/stopambient - turn off ambient\n/firstperson - first person view\n/ask - Use this when you need help\n");
 			        	strcat(str, "/r - send a radio message\n/ooc - Global Chat (needs radio device)\n/me - self expression command\n/shout - yell :)\n/local - local chat\n\
 						/pm - Private message someone\n/blockpm & /unblockpm - self explained\n/inv - show inventory\n/acmds - Admin Commands\n/rules - List of server rules\n");
-		                ShowPlayerDialog(playerid,4661,DIALOG_STYLE_MSGBOX,"DayZ - General CMDSs",str,"Close","");
+		                ShowPlayerDialog(playerid,4661,DIALOG_STYLE_MSGBOX,"DayZ - Comandos gerais",str,"Fechar","");
 					}
 
 				    case 1:
 				    {
 				        new str[126];
 				        strcat(str, "/stopanim - Stop all animations\n/wave - Wave your hand\n/sit - three sets of sitting animation\n/handsup - Put your hands up\n");
-				        ShowPlayerDialog(playerid,4662,DIALOG_STYLE_MSGBOX,"DayZ - Animations CMDs",str,"Close","");
+				        ShowPlayerDialog(playerid,4662,DIALOG_STYLE_MSGBOX,"DayZ - Comandos de animacoes",str,"Fechar","");
 					}
 
 				    case 2:
@@ -6428,7 +6428,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				        new str[400];
 		          		strcat(str, "/makegroup - Create a group\n/destroygroup - Destroy your group\n/g - group chat\n/groupinfo - Group information\n/invitegroup - invite someone to your group\n\
 						/acceptgroup - Self explained\n/denygroup - Self explained\n/kickgroup - kick someone from your group\n/leavegroup - self explained\n/groupfind - find a group player\n");
-				        ShowPlayerDialog(playerid,4663,DIALOG_STYLE_MSGBOX,"DayZ - Group CMDs",str,"Close","");
+				        ShowPlayerDialog(playerid,4663,DIALOG_STYLE_MSGBOX,"DayZ - Comandos de grupo",str,"Fechar","");
 					}
 				}
 			}
@@ -6442,7 +6442,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			    {
 			        case 0:
 			        {
-			            ShowPlayerDialog(playerid,5472,DIALOG_STYLE_LIST,"DayZ - Commands","General Commands\nAnimation Commands\nGroup Commands\n","Select","Close");
+			            ShowPlayerDialog(playerid,5472,DIALOG_STYLE_LIST,"DayZ - Comandos","Comandos gerais\nComandos de animacao\nComandos de grupo\n","Selecionar","Fechar");
 					}
 
 			        case 1:
@@ -6457,12 +6457,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						{37DB45}Humanity{FFFFFF}: If the skull if green means you are a hero or a normal player which is safe for most players.\nAs for Red it means you are a bandit you may be killed on sight!\n");
 						strcat(str,"{37DB45}Noise{FFFFFF}: Vision sight for zombies. Name tag showns further if you're making alot of noise!\n\
 						{37DB45}Eye Sight{FFFFFF}: Name Tag seen through walls.\n");
-						ShowPlayerDialog(playerid, 8343, DIALOG_STYLE_MSGBOX, "DayZ - Survival Tips", str, "Close", "");
+						ShowPlayerDialog(playerid, 8343, DIALOG_STYLE_MSGBOX, "DayZ - Dicas de sobrevivencia", str, "Close", "");
 					}
 
 					case 2:
 					{
-					    ShowPlayerDialog(playerid, 8343, DIALOG_STYLE_MSGBOX, "DayZ - Zombies", "Will be added when zombies are added again!", "Close", "");
+					    ShowPlayerDialog(playerid, 8343, DIALOG_STYLE_MSGBOX, "DayZ - Zumbis", "Sera adicionado quando os zumbis voltarem!", "Close", "");
 					}
 				}
 			}
@@ -6474,8 +6474,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 			    switch(listitem)
 			    {
-			        case 0: ShowPlayerDialog(playerid, DIALOG_GENDEROPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Gender Selection", "Please, select the default gender you wish to spawn with.", "Male", "Female");
-			        case 1: ShowPlayerDialog(playerid, DIALOG_AMBIENTOPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Ambient Background", "Enable or disable the background ambient?", "ON", "OFF");
+			        case 0: ShowPlayerDialog(playerid, DIALOG_GENDEROPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Escolha de genero", "Selecione o genero padrao do seu personagem.", "Male", "Female");
+			        case 1: ShowPlayerDialog(playerid, DIALOG_AMBIENTOPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Som ambiente", "Ativar ou desativar o som ambiente?", "ON", "OFF");
 				}
 			}
 		}
@@ -6485,13 +6485,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 				pInfo[playerid][DefaultGender] = MALE_ID;
-				SendClientMessage(playerid, -1, ""chat" You have sucessfully changed your default gender to MALE this will be saved.");
+				SendClientMessage(playerid, -1, ""chat" Genero padrao alterado para MASCULINO. Alteracao salva.");
 			}
 
 			if(!response)
 			{
 				pInfo[playerid][DefaultGender] = FEMALE_ID;
-				SendClientMessage(playerid, -1, ""chat" You have sucessfully changed your default gender to FEMALE this will be saved.");
+				SendClientMessage(playerid, -1, ""chat" Genero padrao alterado para FEMININO. Alteracao salva.");
 			}
 		}
 
@@ -6500,13 +6500,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 				pInfo[playerid][pAmbientEnable] = 1;
-				SendClientMessage(playerid, -1, ""chat" You have sucessfully changed ambient background to ON this will be saved.");
+				SendClientMessage(playerid, -1, ""chat" Som ambiente ATIVADO. Alteracao salva.");
 			}
 
 			if(!response)
 			{
 				pInfo[playerid][pAmbientEnable] = 2;
-				SendClientMessage(playerid, -1, ""chat" You have sucessfully changed ambient background to OFF this will be saved.");
+				SendClientMessage(playerid, -1, ""chat" Som ambiente DESATIVADO. Alteracao salva.");
 			}
 		}
 
@@ -6516,10 +6516,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 			    switch(listitem)
 			    {
-			        case 0: pInfo[playerid][pRadioFreq] = 60.0, SendClientMessage(playerid,-1,""chat" You've changed your radio frequency meter to low!");
-			        case 1: pInfo[playerid][pRadioFreq] = 100.0, SendClientMessage(playerid,-1,""chat" You've changed your radio frequency meter to medium!");
-			        case 2: pInfo[playerid][pRadioFreq] = 160.0, SendClientMessage(playerid,-1,""chat" You've changed your radio frequency meter to normal!");
-			        case 3: pInfo[playerid][pRadioFreq] = 200.0, SendClientMessage(playerid,-1,""chat" You've changed your radio frequency meter to high!");
+			        case 0: pInfo[playerid][pRadioFreq] = 60.0, SendClientMessage(playerid,-1,""chat" Alcance do radio alterado para baixo!");
+			        case 1: pInfo[playerid][pRadioFreq] = 100.0, SendClientMessage(playerid,-1,""chat" Alcance do radio alterado para medio!");
+			        case 2: pInfo[playerid][pRadioFreq] = 160.0, SendClientMessage(playerid,-1,""chat" Alcance do radio alterado para normal!");
+			        case 3: pInfo[playerid][pRadioFreq] = 200.0, SendClientMessage(playerid,-1,""chat" Alcance do radio alterado para alto!");
 				}
 			}
 		}
@@ -6529,7 +6529,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 			    pInfo[playerid][pTentLink] = listitem;
-				ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Viewing Tent"COL_GREEN" (16 SLOTS)","Please select an option!","Add Item","Take Item");
+				ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Visualizando barraca"COL_GREEN" (16 SLOTS)","Selecione uma opcao!","Adicionar item","Retirar item");
 			}
 		}
 
@@ -6546,7 +6546,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 0)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot1],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 1",Tent[GetTentID(playerid)][tentSlot1]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 1",Tent[GetTentID(playerid)][tentSlot1]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot1] = strv;
@@ -6555,7 +6555,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 1)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot2],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 2",Tent[GetTentID(playerid)][tentSlot2]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 2",Tent[GetTentID(playerid)][tentSlot2]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot2] = strv;
@@ -6564,7 +6564,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 2)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot3],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 3",Tent[GetTentID(playerid)][tentSlot3]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 3",Tent[GetTentID(playerid)][tentSlot3]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot3] = strv;
@@ -6573,7 +6573,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 3)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot4],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 4",Tent[GetTentID(playerid)][tentSlot4]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 4",Tent[GetTentID(playerid)][tentSlot4]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot4] = strv;
@@ -6582,7 +6582,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 4)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot5],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 5",Tent[GetTentID(playerid)][tentSlot5]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 5",Tent[GetTentID(playerid)][tentSlot5]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot5] = strv;
@@ -6591,7 +6591,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 5)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot6],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 6",Tent[GetTentID(playerid)][tentSlot6]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 6",Tent[GetTentID(playerid)][tentSlot6]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot6] = strv;
@@ -6600,7 +6600,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 6)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot7],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 7",Tent[GetTentID(playerid)][tentSlot7]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 7",Tent[GetTentID(playerid)][tentSlot7]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot7] = strv;
@@ -6609,7 +6609,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 7)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot8],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 8",Tent[GetTentID(playerid)][tentSlot8]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 8",Tent[GetTentID(playerid)][tentSlot8]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot8] = strv;
@@ -6618,7 +6618,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 8)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot9],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 9",Tent[GetTentID(playerid)][tentSlot9]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 9",Tent[GetTentID(playerid)][tentSlot9]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot9] = strv;
@@ -6627,7 +6627,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 9)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot10],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 10",Tent[GetTentID(playerid)][tentSlot10]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 10",Tent[GetTentID(playerid)][tentSlot10]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot10] = strv;
@@ -6636,7 +6636,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 10)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot11],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 11",Tent[GetTentID(playerid)][tentSlot11]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 11",Tent[GetTentID(playerid)][tentSlot11]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot11] = strv;
@@ -6645,7 +6645,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 11)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot12],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 12",Tent[GetTentID(playerid)][tentSlot12]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 12",Tent[GetTentID(playerid)][tentSlot12]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot12] = strv;
@@ -6654,7 +6654,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 12)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot13],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 13",Tent[GetTentID(playerid)][tentSlot13]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 13",Tent[GetTentID(playerid)][tentSlot13]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot13] = strv;
@@ -6663,7 +6663,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 13)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot14],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 14",Tent[GetTentID(playerid)][tentSlot14]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 14",Tent[GetTentID(playerid)][tentSlot14]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot14] = strv;
@@ -6672,7 +6672,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 14)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot15],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 15",Tent[GetTentID(playerid)][tentSlot15]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 15",Tent[GetTentID(playerid)][tentSlot15]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot15] = strv;
@@ -6681,7 +6681,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(pInfo[playerid][pTentLink] == 15)
 				{
 					AddSlotToInventoryWorld(playerid,Tent[GetTentID(playerid)][tentSlot16],1);
-					format(str,sizeof(str),""chat" Taken item '%s' from tent storage slot 16",Tent[GetTentID(playerid)][tentSlot16]);
+					format(str,sizeof(str),""chat" Item '%s' retirado do espaco 16",Tent[GetTentID(playerid)][tentSlot16]);
 					SendClientMessage(playerid,-1,str);
 					format(strv,sizeof(strv),"Empty Slot");
 					Tent[GetTentID(playerid)][tentSlot16] = strv;
@@ -6701,7 +6701,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot1] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 1!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 1!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6711,7 +6711,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot2] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 2!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 2!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6721,7 +6721,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
                     Tent[GetTentID(playerid)][tentSlot3] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 3!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 3!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6731,7 +6731,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot4] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 4!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 4!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6741,7 +6741,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot5] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 5!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 5!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6751,7 +6751,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot6] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 6!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 6!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6761,7 +6761,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot7] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 7!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 7!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6771,7 +6771,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot8] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 8!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 8!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6781,7 +6781,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot9] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 9!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 9!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6791,7 +6791,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot10] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 10!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 10!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6801,7 +6801,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot11] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 11!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 11!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6811,7 +6811,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot12] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 12!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 12!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6821,7 +6821,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot13] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 13!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 13!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6831,7 +6831,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot14] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 14!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 14!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6841,7 +6841,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot15] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 15!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 15!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 
@@ -6851,7 +6851,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					Tent[GetTentID(playerid)][tentSlot16] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 16!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 16!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 				}
 			}
@@ -6862,7 +6862,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 			    pInfo[playerid][pStorageLink] = listitem;
-				ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Vehicle Storage"COL_GREEN" (4 SLOTS)","Please select an option!","Add Item","Take Item");
+				ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Vehicle Storage"COL_GREEN" (4 SLOTS)","Selecione uma opcao!","Adicionar item","Retirar item");
 			}
 		}
 
@@ -6975,7 +6975,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot1] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 1!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 1!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -7065,7 +7065,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot2] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 2!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 2!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -7155,7 +7155,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot3] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 3!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 3!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -7245,7 +7245,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot4] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 4!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 4!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -7335,7 +7335,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot5] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 5!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 5!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -7425,7 +7425,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					RemoveSlotToInventory(playerid,gItemList,1);
 					format(str,sizeof(str),"%s",gItemList);
 					vInfo[GetVehicleNearID(playerid)][vSlot6] = str;
-					format(str2,sizeof(str2),""chat" Added the item '%s' to slot 6!",inputtext);
+					format(str2,sizeof(str2),""chat" Item '%s' adicionado ao espaco 6!",inputtext);
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
@@ -8273,7 +8273,7 @@ CMD:groupinfo(playerid,params[])
 	new str[480];
 	format(str,sizeof(str),""COL_WHITE"Viewing group:"COL_GREEN" %s\n"COL_WHITE"Group ID: %i\nGroup Members: %i\nGroup Owner: %s",
 	Groups[groupid][GroupName],Groups[groupid][GroupID],Groups[groupid][GroupMembers],Groups[groupid][GroupOwner]);
-	ShowPlayerDialog(playerid,5472,DIALOG_STYLE_MSGBOX,"DayZ - Viewing Group Info",str,"Close",""); //it's edited here
+	ShowPlayerDialog(playerid,5472,DIALOG_STYLE_MSGBOX,"DayZ - Viewing Group Info",str,"Fechar",""); //it's edited here
 	return 1;
 }
 
@@ -8567,7 +8567,7 @@ CMD:rules(playerid)
 	strcat(str,"1. Respect your fellow Players, Administrators, and Moderators.\n2. No offensive language!\n3. Do not use any third party mod!\n\
 	4. Do not argue with any staff members!\n5. Do not duplicate loots!\n6. Use common sense. If you are being an ass you will be treated like one.\n7. No Advertising\n");
 	strcat(str,"8. Do not abuse or exploit any bugs!\n9. No pausing during playing!\n10. Do not spam or flood the chat\n11. Do not C-Bug or any other SA-MP glitches!");
-	ShowPlayerDialog(playerid,2657,DIALOG_STYLE_MSGBOX,"DayZ - Rules",str,"Close","");
+	ShowPlayerDialog(playerid,2657,DIALOG_STYLE_MSGBOX,"DayZ - Rules",str,"Fechar","");
 	return 1;
 }
 
@@ -8653,7 +8653,7 @@ CMD:wave(playerid, params[])
 
 CMD:commands(playerid)
 {
-    ShowPlayerDialog(playerid,5472,DIALOG_STYLE_LIST,"DayZ - Commands","General Commands\nAnimation Commands\nGroup Commands\n","Select","Close");
+    ShowPlayerDialog(playerid,5472,DIALOG_STYLE_LIST,"DayZ - Comandos","Comandos gerais\nComandos de animacao\nComandos de grupo\n","Selecionar","Fechar");
 	return 1;
 }
 
@@ -8668,7 +8668,7 @@ CMD:acmds(playerid)
 		strcat(str,"Level 4: /ip, /ann, /sethelper\n");
 		strcat(str,"Level 5: /get, /respawnallcars, /respawncars, /sethumanity\n");
 		strcat(str,"Level 6: /setadmin, /setpremium, /nuke, /changename, /giveallitems");
-        ShowPlayerDialog(playerid,8348,DIALOG_STYLE_MSGBOX,"DayZ - Admin Commands",str,"Close","");
+        ShowPlayerDialog(playerid,8348,DIALOG_STYLE_MSGBOX,"DayZ - Admin Commands",str,"Fechar","");
 	}
 	else return SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
 	return 1;
@@ -8679,7 +8679,7 @@ CMD:basickeys(playerid)
 	new str[480];
 	strcat(str,"Press ' Y ' To open inventory\nPress ' N ' To loot\nPress ' LALT (LEFT ALT) ' To loot drop items!\nPress ' C ' To refill cainster\nPress ' N ' to loot dead bodys!\n\
 	Hold ' H ' To go prone!\nPress ' NUMPAD 1 ' to view map or use it from inventory!");
-	ShowPlayerDialog(playerid,8741,DIALOG_STYLE_MSGBOX,"DayZ - Keys",str,"Close","");
+	ShowPlayerDialog(playerid,8741,DIALOG_STYLE_MSGBOX,"DayZ - Keys",str,"Fechar","");
 	return 1;
 }
 
@@ -8694,7 +8694,7 @@ CMD:inv(playerid) return ShowInventory(playerid);
 
 CMD:help(playerid)
 {
-    ShowPlayerDialog(playerid, 8341, DIALOG_STYLE_LIST, "DayZ - Help", "General Commands\nSurvival Tips\nZombies & Avoidance\n", "Select", "Close");
+    ShowPlayerDialog(playerid, 8341, DIALOG_STYLE_LIST, "DayZ - Help", "Comandos gerais\nSurvival Tips\nZombies & Avoidance\n", "Select", "Close");
 	return 1;
 }
 
@@ -8879,7 +8879,7 @@ CMD:admins(playerid, params[])
 	                }
 	            }
 	        }
-	        ShowPlayerDialog(playerid,DIALOG_ADMINS,DIALOG_STYLE_MSGBOX,"Online admins",adminstring,"Close","");
+	        ShowPlayerDialog(playerid,DIALOG_ADMINS,DIALOG_STYLE_MSGBOX,"Online admins",adminstring,"Fechar","");
 		}
  		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No admins online");
 	}
@@ -8904,7 +8904,7 @@ CMD:premiums(playerid, params[])
 	                }
 	            }
 	        }
-	        ShowPlayerDialog(playerid,DIALOG_VIPS,DIALOG_STYLE_MSGBOX,"Online Premiums",adminstring,"Close","");
+	        ShowPlayerDialog(playerid,DIALOG_VIPS,DIALOG_STYLE_MSGBOX,"Online Premiums",adminstring,"Fechar","");
 		}
  		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No premium members online");
 	}
@@ -8929,7 +8929,7 @@ CMD:helpers(playerid, params[])
 	                }
 	            }
 	        }
-	        ShowPlayerDialog(playerid,DIALOG_VIPS,DIALOG_STYLE_MSGBOX,"Online Helpers",adminstring,"Close","");
+	        ShowPlayerDialog(playerid,DIALOG_VIPS,DIALOG_STYLE_MSGBOX,"Online Helpers",adminstring,"Fechar","");
 		}
  		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No helpers online at the moment!");
 	}
@@ -8942,7 +8942,7 @@ CMD:stats(playerid) return cmd_survival(playerid);
 CMD:survival(playerid)
 {
 	new str[128];
-	format(str, sizeof(str), "*"COL_WHITE" Blood: %i | Hunger: %i | Thirst: %i", pInfo[playerid][pBlood], pInfo[playerid][pHunger], pInfo[playerid][pThrist]);
+	format(str, sizeof(str), "*"COL_WHITE" Sangue: %i | Hunger: %i | Thirst: %i", pInfo[playerid][pBlood], pInfo[playerid][pHunger], pInfo[playerid][pThrist]);
 	SendClientMessage(playerid, -1, str);
 	return 1;
 }
@@ -8965,12 +8965,12 @@ CMD:info(playerid,params[])
 			format(stringgps,sizeof(stringgps),"%s", zonegps);
 
 			format(str,sizeof(str),""COL_WHITE"Player"COL_GREEN" %s"COL_WHITE"(%i) information!\nPlayer Ping: %i\nPlayer FPS: %d\nX: %f Y: %f Z: %f\nBackpack: %s\nLocation: %s\nAirbreak Warnings: %i\n\
-			Admin Warnings: %i\nMuted: %i\nAdmin Status: %s\nPremium Status: %i\nAlive Time: %s\nMurders: %i\nBlood: %i\nHumanity: %i\nSkin: %i\nCurrent Weapon: %s\nCurrent Ammo: %i\nVehicle ID: %i\nVehicle Tires: %i\nVehicle Fuel: %i\nVehicle Engine: %i\nVehicle Health: %0.f",
+			Admin Warnings: %i\nMuted: %i\nAdmin Status: %s\nPremium Status: %i\nTempo vivo: %s\nAssassinatos: %i\nSangue: %i\nHumanity: %i\nSkin: %i\nCurrent Weapon: %s\nCurrent Ammo: %i\nVehicle ID: %i\nVehicle Tires: %i\nVehicle Fuel: %i\nVehicle Engine: %i\nVehicle Health: %0.f",
 			PlayerName(targetid),targetid,GetPlayerPing(targetid),FPS2[targetid]-1,fPos[0],fPos[1],fPos[2],GetBackpackName(targetid),stringgps,pInfo[targetid][pAirbreakWarning],
 			pInfo[targetid][pWarnings],pInfo[targetid][IsPlayerMuted],GetAdminName(targetid),pInfo[targetid][pPremium],TimeConvert(pInfo[targetid][pAliveTime]),pInfo[targetid][Murders],
 			pInfo[targetid][pBlood],pInfo[targetid][Humanity],GetPlayerSkin(targetid),DayZSA_GetWeaponName(targetid),GetPlayerAmmo(targetid),GetPlayerVehicleID(targetid),vInfo[GetPlayerVehicleID(targetid)][vehicleTires],
 			vInfo[GetPlayerVehicleID(targetid)][vehicleFuel],vInfo[GetPlayerVehicleID(targetid)][vehicleEngine],vehhp);
-			ShowPlayerDialog(playerid,6365,DIALOG_STYLE_MSGBOX,"Viewing player info",str,"Close","");
+			ShowPlayerDialog(playerid,6365,DIALOG_STYLE_MSGBOX,"Viewing player info",str,"Fechar","");
 		}
 	}
 	else {
@@ -10337,7 +10337,7 @@ stock CreatePlayerTD(playerid)
 		PlayerTextDrawBoxColor(playerid,Map[playerid], 255);
 		PlayerTextDrawTextSize(playerid,Map[playerid], 470.000000, 410.000000);
 
-		LegBroken[playerid] = CreatePlayerTextDraw(playerid,532.000000, 325.000000, "Broken Leg");
+		LegBroken[playerid] = CreatePlayerTextDraw(playerid,532.000000, 325.000000, "Perna quebrada");
 		PlayerTextDrawBackgroundColor(playerid,LegBroken[playerid], 255);
 		PlayerTextDrawFont(playerid,LegBroken[playerid], 2);
 		PlayerTextDrawLetterSize(playerid,LegBroken[playerid], 0.200000, 0.899999);
@@ -10532,7 +10532,7 @@ stock CreatePlayerTD(playerid)
 		PlayerTextDrawSetProportional(playerid,DebugMonitor_Text[playerid], 1);
 		PlayerTextDrawSetSelectable(playerid,DebugMonitor_Text[playerid], 0);
 
-		DebugInfo[playerid]  = CreatePlayerTextDraw(playerid,554.000000, 29.000000, "Zombies Killed: %i~n~Headshots: %i~n~Murders: %i~n~Bandits Killed: %i~n~Blood: %i~n~Zombies: %i~n~Temperature: %0.2f F~n~Alive T");
+		DebugInfo[playerid]  = CreatePlayerTextDraw(playerid,554.000000, 29.000000, "Zumbis mortos: %i~n~Tiros na cabeca: %i~n~Assassinatos: %i~n~Bandidos mortos: %i~n~Sangue: %i~n~Zumbis: %i~n~Temperatura: %0.2f F~n~Alive T");
 		PlayerTextDrawAlignment(playerid,DebugInfo[playerid] , 2);
 		PlayerTextDrawBackgroundColor(playerid,DebugInfo[playerid] , 255);
 		PlayerTextDrawFont(playerid,DebugInfo[playerid] , 2);
@@ -11603,7 +11603,7 @@ stock ShowInventory(playerid)
 		format(gItemList,sizeof(gItemList),"%s",gItemList);
 
 		format(str,sizeof(str),""COL_WHITE"%s "COL_GREEN"%i |"COL_WHITE" %i",GetBackpackName(playerid),pInfo[playerid][BackpackSlotsUsed],pInfo[playerid][BackpackSlots]);
-		ShowPlayerDialog(playerid,INV_DIALOG_ID,DIALOG_STYLE_LIST,str,gItemList,"Select","Close");
+		ShowPlayerDialog(playerid,INV_DIALOG_ID,DIALOG_STYLE_LIST,str,gItemList,"Selecionar","Fechar");
 	}
 	return 1;
 }
@@ -11724,7 +11724,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 			}
 			else
 			{
-				PlayerTextDrawSetString(playerid, LegBroken[playerid], "Broken Leg");
+				PlayerTextDrawSetString(playerid, LegBroken[playerid], "Perna quebrada");
 				PlayerTextDrawHide(playerid, LegBroken[playerid]);
 				SetPlayerDrunkLevel(playerid, 0);
 				KillTimer(pInfo[playerid][Bleeding]);
@@ -15620,7 +15620,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 	{
 		format(str,sizeof(str),"%s",
 		vInfo[GetVehicleNearID(playerid)][vSlot1]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (1 SLOTS)",str,"Select","Close");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (1 SLOTS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 2)
@@ -15628,7 +15628,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		format(str,sizeof(str),"%s\n%s",
 		vInfo[GetVehicleNearID(playerid)][vSlot1],
 		vInfo[GetVehicleNearID(playerid)][vSlot2]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (2 SLOTS)",str,"Select","Close");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (2 SLOTS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 4)
@@ -15638,7 +15638,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		vInfo[GetVehicleNearID(playerid)][vSlot2],
 		vInfo[GetVehicleNearID(playerid)][vSlot3],
 		vInfo[GetVehicleNearID(playerid)][vSlot4]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (4 SLOTS)",str,"Select","Close");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (4 SLOTS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 6)
@@ -15650,7 +15650,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		vInfo[GetVehicleNearID(playerid)][vSlot4],
 		vInfo[GetVehicleNearID(playerid)][vSlot5],
 		vInfo[GetVehicleNearID(playerid)][vSlot6]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (6 SLOTS)",str,"Select","Close");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (6 SLOTS)",str,"Selecionar","Fechar");
 	}
 	return 1;
 }
@@ -15676,7 +15676,7 @@ function DayZSA_DisplayTent(playerid)
 	Tent[GetTentID(playerid)][tentSlot15],
 	Tent[GetTentID(playerid)][tentSlot16]);
 
-	ShowPlayerDialog(playerid,DIALOG_TENT_VIEW,DIALOG_STYLE_LIST,""COL_WHITE"GEAR Tent"COL_GREEN" (16 SLOTS)",str,"Select","Close");
+	ShowPlayerDialog(playerid,DIALOG_TENT_VIEW,DIALOG_STYLE_LIST,""COL_WHITE"GEAR Tent"COL_GREEN" (16 SLOTS)",str,"Selecionar","Fechar");
 	return 1;
 }
 
@@ -15743,7 +15743,7 @@ stock ShowInventoryTent(playerid)
 			format(gItemList,sizeof(gItemList),"%s\n%d\t\t%s",gItemList,_GetItemAmountPVar(playerid,item),_GetItemNamePVar(playerid,item));
 		}
 		format(gItemList,sizeof(gItemList),"%s",gItemList);
-		ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Viewing Tent (16 SLOTS)",gItemList,"Add Item","Close");
+		ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Visualizando barraca (16 SLOTS)",gItemList,"Add Item","Close");
 	}
 	return 1;
 }
@@ -17782,7 +17782,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         DayZSA_HideMenuForPlayer(playerid);
         if(pInfo[playerid][DefaultGender] == 0)
         {
-            //ShowPlayerDialog(playerid, DIALOG_GENDEROPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Gender Selection", "Please, select the default gender you wish to spawn with.\n** Please note you can change this anytime via Options Menu **", "Male", "Female");
+            //ShowPlayerDialog(playerid, DIALOG_GENDEROPTION_2, DIALOG_STYLE_MSGBOX, "DayZ - Escolha de genero", "Selecione o genero padrao do seu personagem.\n** Please note you can change this anytime via Options Menu **", "Male", "Female");
 			pInfo[playerid][DefaultGender] = 1;
 		}
    		PlayerTextDrawShow(playerid, PlayerBlood[playerid]);
