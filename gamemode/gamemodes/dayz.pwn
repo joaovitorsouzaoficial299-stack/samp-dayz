@@ -37,7 +37,7 @@
 #define mysql_host "127.0.0.1"
 #define mysql_user  "root"
 #define mysql_password ""
-#define mysql_database  "pgadata"
+#define mysql_database  "dayz"
 
 //achievements
 #define SAN_ANDREAS
@@ -209,7 +209,7 @@ PlayAnim(playerid, animlib[], animname[], Float:fDelta, loop, lockx, locky, free
 }
 
 
-#define MAX_ZOMBIES 400
+#define MAX_ZOMBIES 50
 new SpawnedZombies = 0;
 new ZombiesTimer;
 new IsAZombie[MAX_PLAYERS];
