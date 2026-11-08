@@ -1,0 +1,53 @@
+name: Extrair GameMode DayZ
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'Project-DayZ-SAMP-master.zip'
+      - '.github/workflows/extrair-gamemode.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extrair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extrair arquivos da GameMode
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          source = Path('Project-DayZ-SAMP-master.zip')
+          target = Path('gamemode')
+          target.mkdir(exist_ok=True)
+          with ZipFile(source) as archive:
+              for entry in archive.infolist():
+                  if entry.is_dir():
+                      continue
+                  parts = Path(entry.filename).parts
+                  if not parts or any(part in ('..', '.') for part in parts):
+                      raise ValueError(f'Caminho inseguro: {entry.filename}')
+                  # Remove a pasta raiz criada pelo ZIP original
+                  relative = Path(*parts[1:]) if len(parts) > 1 else Path(parts[0])
+                  if not relative.parts:
+                      continue
+                  destination = target / relative
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  with archive.open(entry) as src, destination.open('wb') as dst:
+                      import shutil
+                      shutil.copyfileobj(src, dst)
+          print('GameMode extraída em gamemode/')
+          PY
+      - name: Salvar arquivos no GitHub
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gamemode
+          if ! git diff --cached --quiet; then
+            git commit -m "Extrair GameMode DayZ do ZIP"
+            git push
+          fi
