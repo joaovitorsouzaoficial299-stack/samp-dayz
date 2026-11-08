@@ -6529,7 +6529,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 			    pInfo[playerid][pTentLink] = listitem;
-				ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Visualizando barraca"COL_GREEN" (16 SLOTS)","Selecione uma opcao!","Adicionar item","Retirar item");
+				ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Visualizando barraca"COL_GREEN" (16 ESPACOS)","Selecione uma opcao!","Adicionar item","Retirar item");
 			}
 		}
 
@@ -6862,7 +6862,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(response)
 			{
 			    pInfo[playerid][pStorageLink] = listitem;
-				ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Vehicle Storage"COL_GREEN" (4 SLOTS)","Selecione uma opcao!","Adicionar item","Retirar item");
+				ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S,DIALOG_STYLE_MSGBOX,""COL_WHITE"Armazenamento do veiculo"COL_GREEN" (4 ESPACOS)","Selecione uma opcao!","Adicionar item","Retirar item");
 			}
 		}
 
@@ -6979,7 +6979,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
       					format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
@@ -6994,7 +6994,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
@@ -7007,7 +7007,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
@@ -7020,7 +7020,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
@@ -7033,7 +7033,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7046,7 +7046,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7069,7 +7069,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
 						format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot2] = strv;
@@ -7084,7 +7084,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot2] = strv;
@@ -7097,7 +7097,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot2] = strv;
@@ -7110,7 +7110,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot2] = strv;
@@ -7123,7 +7123,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot2] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7136,7 +7136,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7159,7 +7159,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
 						format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot3] = strv;
@@ -7174,7 +7174,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot3] = strv;
@@ -7187,7 +7187,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot3] = strv;
@@ -7200,7 +7200,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot3] = strv;
@@ -7213,7 +7213,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot3] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7226,7 +7226,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7249,7 +7249,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
 						format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot4] = strv;
@@ -7264,7 +7264,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot4] = strv;
@@ -7277,7 +7277,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot4] = strv;
@@ -7290,7 +7290,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot4] = strv;
@@ -7303,7 +7303,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot4] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7316,7 +7316,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7339,7 +7339,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
 						format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot5] = strv;
@@ -7354,7 +7354,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot5] = strv;
@@ -7367,7 +7367,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot5] = strv;
@@ -7380,7 +7380,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot5] = strv;
@@ -7393,7 +7393,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot5] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7406,7 +7406,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7429,7 +7429,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid,-1,str2);
 	    			if(strfind(str, "Engine", true) != -1)
 				    {
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" This vehicle already has an engine the engine has been put back into your backpack!"),AddSlotToInventoryWorld(playerid,"Engine",1);
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleEngine] == 1) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem motor! O motor voltou para sua mochila!"),AddSlotToInventoryWorld(playerid,"Engine",1);
 						vInfo[GetVehicleNearID(playerid)][vehicleEngine] = 1;
 						format(strv,sizeof(strv),"Empty Slot");
 						vInfo[GetVehicleNearID(playerid)][vSlot6] = strv;
@@ -7444,7 +7444,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					{
            				if(FOUR_TIRE_ADD1(playerid) || FOUR_TIRE_ADD2(playerid))
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 4) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot6] = strv;
@@ -7457,7 +7457,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(TWO_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 2) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot6] = strv;
@@ -7470,7 +7470,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(SIX_TIRE_VEHICLE_ADD)
 						{
-							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough tires the tire has been put back into your backpack!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
+							if(vInfo[GetVehicleNearID(playerid)][vehicleTires] == 6) return SendClientMessage(playerid,-1,""chat" Este veiculo ja tem pneus suficientes! O pneu voltou para sua mochila!!"),AddSlotToInventoryWorld(playerid,"Tire",1),format(strv,sizeof(strv),"Empty Slot"),vInfo[GetVehicleNearID(playerid)][vSlot1] = strv;
 							vInfo[GetVehicleNearID(playerid)][vehicleTires] += 1;
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot6] = strv;
@@ -7483,7 +7483,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 						if(NO_TIRE_VEHICLE_ADD || ENGINE_ONLY_VEHICLE_ADD)
 						{
-						    SendClientMessage(playerid,-1,""chat" This vehicle does not require any tires the tire has been put back into your inventory!"), AddSlotToInventoryWorld(playerid,"Tire",1);
+						    SendClientMessage(playerid,-1,""chat" Este veiculo nao precisa de pneus! O pneu voltou para seu inventario!"), AddSlotToInventoryWorld(playerid,"Tire",1);
 							format(strv,sizeof(strv),"Empty Slot");
 							vInfo[GetVehicleNearID(playerid)][vSlot6] = strv;
 							if(!IsPlayerInAnyVehicle(playerid))
@@ -7496,7 +7496,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 					if(strfind(str, "Full Jerry Can", true) != -1)
 					{
-    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" Vehicle already has enough fuel, full Jerry Can has been added to your backpack!");
+    					if(vInfo[GetVehicleNearID(playerid)][vehicleFuel] == 100) return SendClientMessage(playerid,-1,""chat" O tanque ja esta cheio! O galao de combustivel voltou para sua mochila!");
 			  	    	vInfo[GetVehicleNearID(playerid)][vehicleFuel] += random(75);
 			  	    	AddSlotToInventoryWorld(playerid,"Empty Jerry Can",1);
 						format(strv,sizeof(strv),"Empty Slot");
@@ -7516,14 +7516,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		    if(response)
 		    {
 		        SetPlayerSkin(playerid,NORMAL);
-          		ShowPlayerDialog(playerid,DIALOG_AMBIENT,DIALOG_STYLE_MSGBOX,""COL_LGREEN"DayZ Background Ambient",""COL_WHITE"Enabling the ambient gives more aspect of survival to the gamemode!\n"COL_LGREEN"Enabling ambient requires A average of 2mb Download speed!","Enable","Disable");
+          		ShowPlayerDialog(playerid,DIALOG_AMBIENT,DIALOG_STYLE_MSGBOX,""COL_LGREEN"DayZ - Som ambiente",""COL_WHITE"Ativar o som ambiente deixa a sobrevivencia mais imersiva!\n"COL_LGREEN"Enabling ambient requires A average of 2mb Download speed!","Enable","Disable");
 
 			}
 
 			if(!response)
 			{
 			    SetPlayerSkin(playerid,FEMALE);
-				ShowPlayerDialog(playerid,DIALOG_AMBIENT,DIALOG_STYLE_MSGBOX,""COL_LGREEN"DayZ Background Ambient",""COL_WHITE"Enabling the ambient gives more aspect of survival to the gamemode!\n"COL_LGREEN"Enabling ambient requires A average of 2mb Download speed!","Enable","Disable");
+				ShowPlayerDialog(playerid,DIALOG_AMBIENT,DIALOG_STYLE_MSGBOX,""COL_LGREEN"DayZ - Som ambiente",""COL_WHITE"Ativar o som ambiente deixa a sobrevivencia mais imersiva!\n"COL_LGREEN"Enabling ambient requires A average of 2mb Download speed!","Enable","Disable");
 			}
 		}
 
@@ -7554,12 +7554,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		{
 			if(response)
 			{
-			    SendClientMessage(playerid,-1,"*"COL_LGREEN" Thank you for accepting our rules!");
+			    SendClientMessage(playerid,-1,"*"COL_LGREEN" Obrigado por aceitar nossas regras!");
 			}
 
 			if(!response)
 			{
-			    SendClientMessage(playerid,-1,"*"COL_RED" You have been kicked (Reason: Denying rules)");
+			    SendClientMessage(playerid,-1,"*"COL_RED" Voce foi expulso (motivo: nao aceitou as regras)");
 				KickEx(playerid);
 			}
 		}
@@ -7576,7 +7576,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 8)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7600,7 +7600,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 16)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7624,7 +7624,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 28)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7648,7 +7648,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 38)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7666,7 +7666,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						}
 					}
 				}
-				else return SendClientMessage(playerid, -1, "*"COL_RED" Read the rules! The server have prevented you to duplicate an item!");
+				else return SendClientMessage(playerid, -1, "*"COL_RED" Leia as regras! O servidor impediu a duplicacao de um item!");
 			}
 		}
 
@@ -7682,7 +7682,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 8)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7707,7 +7707,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 16)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7732,7 +7732,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 28)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7757,7 +7757,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					    {
 					    	if(pInfo[playerid][BackpackSlotsUsed] == 38)
 					    	{
-								SendClientMessage(playerid,-1,""chat" Your backpack is full");
+								SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 							}
 							else
 							{
@@ -7776,7 +7776,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						}
 					}
 				}
-				else return SendClientMessage(playerid, -1, "*"COL_RED" Read the rules! The server have prevented you to duplicate an item!");
+				else return SendClientMessage(playerid, -1, "*"COL_RED" Leia as regras! O servidor impediu a duplicacao de um item!");
 			}
 		}
 
@@ -7794,7 +7794,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		    if(response)
 		    {
 		        new invString[64];
-		        ShowPlayerDialog(playerid,DIALOG_INV_EDIT,DIALOG_STYLE_MSGBOX,""COL_GREEN"GEAR","Please select an option","Use","Drop");
+		        ShowPlayerDialog(playerid,DIALOG_INV_EDIT,DIALOG_STYLE_MSGBOX,""COL_GREEN"GEAR","Selecione uma opcao","Use","Drop");
 		        format(gItemList,MAX_ITEM_NAME,inputtext[strfind(inputtext,"\t")+2]);
 		        format(invString,sizeof(invString),"%s",gItemList);
 		        pInfo[playerid][pItemLink] = invString;
@@ -7806,12 +7806,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		    if(response)
 		    {
 		        OnPlayerUseItem(playerid,pInfo[playerid][pItemLink]);
-				GameTextForPlayer(playerid,"~n~~n~~n~~n~~n~~g~please wait......",800,5);
+				GameTextForPlayer(playerid,"~n~~n~~n~~n~~n~~g~aguarde......",800,5);
 			}
 
 			if(!response)
 			{
-   				if(gettime() - 3 < pInfo[playerid][pSpamDrop]) return SendClientMessage(playerid,-1,"*"COL_RED" Wait 3 seconds to drop your item!");
+   				if(gettime() - 3 < pInfo[playerid][pSpamDrop]) return SendClientMessage(playerid,-1,"*"COL_RED" Espere 3 segundos para soltar seu item!");
 		    	{
 					RemoveSlotToInventory(playerid,pInfo[playerid][pItemLink],1);
 					new Float:fPos[3];
@@ -7960,7 +7960,7 @@ CMD:flashoff(playerid)
 		if(IsPlayerAttachedObjectSlotUsed(playerid,3)) RemovePlayerAttachedObject(playerid,3);
 		if(IsPlayerAttachedObjectSlotUsed(playerid,4)) RemovePlayerAttachedObject(playerid,4);
 	}
-	else return SendClientMessage(playerid, -1, "*"COL_RED" You do not have a flashlight in your inventory");
+	else return SendClientMessage(playerid, -1, "*"COL_RED" Voce nao tem uma lanterna no inventario");
 	return 1;
 }
 
@@ -7970,7 +7970,7 @@ CMD:resetinv(playerid,params[])
     {
 		new targetid,string[128];
 		if(sscanf(params, "u", targetid)) return SendClientMessage(playerid,-1,""chat" /resetinv [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		if(!IsPlayerNPC(targetid))
 		{
@@ -7986,13 +7986,13 @@ CMD:resetinv(playerid,params[])
 		//	print("bandage passed");
 			pInfo[targetid][BackpackSlotsUsed] = 1;
 		//	print("info passed");
-			SendClientMessage(targetid,-1,"*"COL_RED" Your inventory has been reset!");
+			SendClientMessage(targetid,-1,"*"COL_RED" Seu inventario foi redefinido!");
 		//	print("message passed");
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You cannot do this to an NPC, this has been logged and sent to the server emergency log list!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode fazer isso com um NPC! A tentativa foi registrada!");
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -8004,7 +8004,7 @@ CMD:setscore(playerid, params[])
     {
         new string[128], pName[MAX_PLAYER_NAME], name[MAX_PLAYER_NAME], targetid, score;
         if(sscanf(params, "ud", targetid, score)) return SendClientMessage(playerid, -1, " /setscore [playerid] [score]");
-        if(targetid == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "player is not connected");
+        if(targetid == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "O jogador nao esta conectado");
         GetPlayerName(playerid, name, sizeof(name));
         GetPlayerName(targetid, pName, sizeof(pName));
         pInfo[targetid][pHour] = score;
@@ -8050,13 +8050,13 @@ CMD:weaps(playerid, params[])
                 }
                 else
                 {
-                    SendClientMessage(playerid,-1,"*"COL_GREY" This player has no weapons!");
+                    SendClientMessage(playerid,-1,"*"COL_GREY" Este jogador nao possui armas!");
                 }
                 return 1;
         }
         else return SendClientMessage(playerid,-1,"*"COL_WHITE" USAGE: /weaps [ID]");
     }
-    else return SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command");
+    else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando");
 }
 
 CMD:h(playerid,params[])
@@ -8073,7 +8073,7 @@ CMD:h(playerid,params[])
 		SendMessageToAllHelpers(helperstring, -1);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right helper permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de ajudante para este comando!");
 	}
 	return 1;
 }
@@ -8087,18 +8087,18 @@ CMD:dropgun(playerid)
 
 		switch(GetPlayerWeapon(playerid))
 		{
-		    case 25: wepname = "Shotgun", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Shotgun", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
-		    case 30: wepname = "AK-47", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("AK-47", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 31: wepname = "M4", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("M4", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
-		    case 34: wepname = "Sniper Rifle", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Sniper Rifle", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 33: wepname = "Country Rifle", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Country Rifle", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 22: wepname = "Pistol", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Pistol", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
-		    case 27: wepname = "SPAZ-12 Shotgun", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("SPAZ-12 Shotgun", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 29: wepname = "MP5", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("MP5", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 23: wepname = "Silenced Pistol", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Silenced Pistol", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 43: wepname = "Binoculars", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Binoculars", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 8: wepname = "Katana", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Katana", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
-		    case 5: wepname = "Baseball Bat", SendClientMessage(playerid, -1, ""chat" You dropped your current weapon/tool!"), DayZSA_DropWeapon("Baseball Bat", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 25: wepname = "Shotgun", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Shotgun", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
+		    case 30: wepname = "AK-47", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("AK-47", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 31: wepname = "M4", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("M4", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
+		    case 34: wepname = "Sniper Rifle", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Sniper Rifle", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 33: wepname = "Country Rifle", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Country Rifle", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 22: wepname = "Pistol", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Pistol", GetPlayerAmmo(playerid), fPos[0],fPos[1],fPos[2]);
+		    case 27: wepname = "SPAZ-12 Shotgun", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("SPAZ-12 Shotgun", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 29: wepname = "MP5", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("MP5", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 23: wepname = "Silenced Pistol", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Silenced Pistol", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 43: wepname = "Binoculars", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Binoculars", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 8: wepname = "Katana", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Katana", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
+		    case 5: wepname = "Baseball Bat", SendClientMessage(playerid, -1, ""chat" Voce soltou sua arma/ferramenta atual!"), DayZSA_DropWeapon("Baseball Bat", GetPlayerAmmo(playerid),fPos[0],fPos[1],fPos[2]);
 		}
 
 		new strdropped[128];
@@ -8106,7 +8106,7 @@ CMD:dropgun(playerid)
 		SendClientMessage(playerid, -1, strdropped);
 		SetPlayerAmmo(playerid, GetPlayerWeapon(playerid), 0);
 	}
-	else return SendClientMessage(playerid, -1, ""chat" You have no weapon equipped");
+	else return SendClientMessage(playerid, -1, ""chat" Voce nao tem arma equipada");
 	return 1;
 }
 
@@ -8122,7 +8122,7 @@ CMD:pickupgun(playerid)
 				{
 					if(pInfo[playerid][BackpackSlotsUsed] == 8)
 					{
-						SendClientMessage(playerid,-1,""chat" Your backpack is full");
+						SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 					}
 					else
 					{
@@ -8158,7 +8158,7 @@ CMD:pickupgun(playerid)
 				{
 					if(pInfo[playerid][BackpackSlotsUsed] == 16)
 					{
-						SendClientMessage(playerid,-1,""chat" Your backpack is full");
+						SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 					}
 					else
 					{
@@ -8194,7 +8194,7 @@ CMD:pickupgun(playerid)
 				{
 					if(pInfo[playerid][BackpackSlotsUsed] == 28)
 					{
-						SendClientMessage(playerid,-1,""chat" Your backpack is full");
+						SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 					}
 					else
 					{
@@ -8230,7 +8230,7 @@ CMD:pickupgun(playerid)
 				{
 					if(pInfo[playerid][BackpackSlotsUsed] == 38)
 					{
-						SendClientMessage(playerid,-1,""chat" Your backpack is full");
+						SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 					}
 					else
 					{
@@ -8260,7 +8260,7 @@ CMD:pickupgun(playerid)
 				}
 			}
 		}
-		else return SendClientMessage(playerid, -1, "*"COL_RED" Read the rules! The server have prevented you to duplicate an item!");
+		else return SendClientMessage(playerid, -1, "*"COL_RED" Leia as regras! O servidor impediu a duplicacao de um item!");
 	}
 	return 1;
 }
@@ -8273,16 +8273,16 @@ CMD:groupinfo(playerid,params[])
 	new str[480];
 	format(str,sizeof(str),""COL_WHITE"Viewing group:"COL_GREEN" %s\n"COL_WHITE"Group ID: %i\nGroup Members: %i\nGroup Owner: %s",
 	Groups[groupid][GroupName],Groups[groupid][GroupID],Groups[groupid][GroupMembers],Groups[groupid][GroupOwner]);
-	ShowPlayerDialog(playerid,5472,DIALOG_STYLE_MSGBOX,"DayZ - Viewing Group Info",str,"Fechar",""); //it's edited here
+	ShowPlayerDialog(playerid,5472,DIALOG_STYLE_MSGBOX,"DayZ - Informacoes do grupo",str,"Fechar",""); //it's edited here
 	return 1;
 }
 
 CMD:makegroup(playerid,params[])
 {
 	new groupnamecmd[16];
-	if(sscanf(params, "s[16]", groupnamecmd)) return SendClientMessage(playerid,-1,"*"COL_RED" /makegroup [group name] [16 Characters]");
+	if(sscanf(params, "s[16]", groupnamecmd)) return SendClientMessage(playerid,-1,"*"COL_RED" /makegroup [nome do grupo] [16 caracteres]");
 
-	if(gettime() - 480 < pInfo[playerid][pGroupSpam]) return SendClientMessage(playerid,-1,"*"COL_RED" Wait eight minutes to create an group again!");
+	if(gettime() - 480 < pInfo[playerid][pGroupSpam]) return SendClientMessage(playerid,-1,"*"COL_RED" Aguarde oito minutos para criar outro grupo!");
 	{
 		if(pInfo[playerid][pHour] >= 2)
 		{
@@ -8290,7 +8290,7 @@ CMD:makegroup(playerid,params[])
 		    {
 				if(strlen(params) > 16)
 				{
-					SendClientMessage(playerid,-1,"*"COL_RED" Group name is to long (MAX CHARACTERS 16)");
+					SendClientMessage(playerid,-1,"*"COL_RED" Nome do grupo muito longo (MAXIMO 16 CARACTERES)");
 				}
 				else
 				{
@@ -8298,9 +8298,9 @@ CMD:makegroup(playerid,params[])
 					pInfo[playerid][pGroupSpam] = gettime();
 				}
 			}
-			else return SendClientMessage(playerid,-1,"*"COL_RED" You are already in a group/made one!");
+			else return SendClientMessage(playerid,-1,"*"COL_RED" Voce ja participa de um grupo ou criou um!");
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You need +2 hours played!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa de mais de 2 horas jogadas!");
 	}
 	return 1;
 }
@@ -8324,11 +8324,11 @@ CMD:invitegroup(playerid,params[])
 				pInfo[targetid][IsPlayerInvitedGroupID] = pInfo[playerid][IsPlayerInGroupID];
 				pInfo[targetid][IsPlayerInvited] = 1;
 			}
-			else return SendClientMessage(playerid,-1,"*"COL_RED" You must be the group owner to use this command!");
+			else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa ser o lider do grupo para usar este comando!");
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You must be in a group to use this command!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa estar em um grupo para usar este comando!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" The player you are trying to invite is already in a group.");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" O jogador convidado ja esta em um grupo.");
 	return 1;
 }
 
@@ -8346,7 +8346,7 @@ CMD:acceptgroup(playerid)
 		format(str,sizeof(str),"*"COL_YELLOW" Player %s(%i) has joined the group %s(%i)",PlayerName(playerid), playerid, Groups[pInfo[playerid][IsPlayerInGroupID]][GroupName], pInfo[playerid][IsPlayerInGroupID]);
 		SendMessageToAllGroups(Groups[pInfo[playerid][IsPlayerInGroupID]][GroupID], str, -1);
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You have not been invited to join any groups!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao recebeu convites para grupos!");
 	return 1;
 }
 
@@ -8358,9 +8358,9 @@ CMD:denygroup(playerid)
 		pInfo[playerid][IsPlayerInvited] = 0;
 		pInfo[playerid][IsPlayerInGroup] = -1;
 		pInfo[playerid][IsPlayerInvitedGroupID] = 0;
-		SendClientMessage(playerid,-1,"*"COL_YELLOW" You denied to join the group!");
+		SendClientMessage(playerid,-1,"*"COL_YELLOW" Voce recusou o convite para o grupo!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You have not been invited to join any groups!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao recebeu convites para grupos!");
 	return 1;
 }
 
@@ -8397,11 +8397,11 @@ CMD:kickgroup(playerid,params[])
 			    pInfo[targetid][IsPlayerInGroup] = 0;
 			    pInfo[targetid][IsPlayerInGroupID] = 0;
 			}
-			else return SendClientMessage(playerid,-1,"*"COL_RED" That player is not in your group!");
+			else return SendClientMessage(playerid,-1,"*"COL_RED" Esse jogador nao esta no seu grupo!");
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You must be the group owner to use this command!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa ser o lider do grupo para usar este comando!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You must be in a group to use this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa estar em um grupo para usar este comando!");
 	return 1;
 }
 
@@ -8420,9 +8420,9 @@ CMD:groupfind(playerid,params[])
 			format(str,sizeof(str),"*"COL_YELLOW" Group member %s(%i) is at %s",PlayerName(targetid),targetid,stringgps);
 			SendClientMessage(playerid,-1,str);
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" The player you are trying to find isn't in your group!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" O jogador procurado nao esta no seu grupo!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You must be in a group to use this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa estar em um grupo para usar este comando!");
 	return 1;
 }
 
@@ -8437,7 +8437,7 @@ CMD:leavegroup(playerid)
 	    pInfo[playerid][IsPlayerInGroup] = 0;
 	    pInfo[playerid][IsPlayerInGroupID] = 0;
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You must be in a group to use this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa estar em um grupo para usar este comando!");
 	return 1;
 }
 
@@ -8476,9 +8476,9 @@ CMD:destroygroup(playerid,params[])
 			pInfo[playerid][IsPlayerInGroupID] = 0;
 
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" That player is not in your group!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Esse jogador nao esta no seu grupo!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You must be the group owner to use this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa ser o lider do grupo para usar este comando!");
 	return 1;
 }
 
@@ -8496,7 +8496,7 @@ CMD:g(playerid,params[])
 		SendMessageToAllGroups(Groups[pInfo[playerid][IsPlayerInGroupID]][GroupID], adminstring, -1);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You need to be in a group to use this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce precisa estar em um grupo para usar este comando!");
 	}
 	return 1;
 }
@@ -8540,7 +8540,7 @@ CMD:map(playerid)
 CMD:stopambient(playerid)
 {
 	StopAudioStreamForPlayer(playerid);
-	SendClientMessage(playerid,-1,"*"COL_GREEN" You've stop playing the ambient!");
+	SendClientMessage(playerid,-1,"*"COL_GREEN" Voce parou de reproduzir o som ambiente!");
 	return 1;
 }
 
@@ -8575,13 +8575,13 @@ CMD:stopanim(playerid, params[])
 {
 	if(GetPVarInt(playerid, "UsingAnim") == 1)
 	{
-		SendClientMessage(playerid, COLOR_WHITE, ""chat" Your animations were cleared!");
+		SendClientMessage(playerid, COLOR_WHITE, ""chat" Suas animacoes foram removidas!");
 		ClearAnimations(playerid);
 		SetPlayerSkin(playerid, GetPlayerSkin(playerid));
 		DeletePVar(playerid,"UsingAnim");
 		SetPlayerSpecialAction(playerid, SPECIAL_ACTION_NONE);
 	}
-	else SendClientMessage(playerid, COLOR_WHITE, ""chat" You are currently not using any animation");
+	else SendClientMessage(playerid, COLOR_WHITE, ""chat" Voce nao esta usando nenhuma animacao");
 	return 1;
 }
 
@@ -8597,25 +8597,25 @@ CMD:sit(playerid, params[])
 	{
 		ApplyAnimation(playerid,"INT_OFFICE","OFF_Sit_Type_Loop", 4.0, 1, 0, 0, 0, 0);
 		SetPVarInt(playerid, "UsingAnim", 1);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 	}
 	if(strcmp(choice, "2", true) == 0)
 	{
 		ApplyAnimation(playerid,"BEACH", "ParkSit_M_loop", 4.0, 1, 0, 0, 0, 0);
 		SetPVarInt(playerid, "UsingAnim", 1);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 	}
 	if(strcmp(choice, "3", true) == 0)
 	{
 		ApplyAnimation(playerid,"BEACH", "ParkSit_W_loop", 4.0, 1, 0, 0, 0, 0);
 		SetPVarInt(playerid, "UsingAnim", 1);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 	}
 	if(strcmp(choice, "4", true) == 0)
 	{
 		ApplyAnimation(playerid,"BAR","dnk_stndF_loop", 4.0, 1, 0, 0, 0, 0);
 		SetPVarInt(playerid, "UsingAnim", 1);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 	}
 	return 1;
 }
@@ -8631,13 +8631,13 @@ CMD:smoke(playerid, params[])
 	if(strcmp(choice, "1", true) == 0)
 	{
 		ApplyAnimation(playerid, "SMOKING", "F_smklean_loop", 4.0, 1, 0, 0, 0, 0);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 		SetPVarInt(playerid, "UsingAnim", 1);
 	}
 	if(strcmp(choice, "2", true) == 0)
 	{
 		ApplyAnimation(playerid,"SMOKING", "M_smklean_loop", 4.0, 1, 0, 0, 0, 0);
-		SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+		SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 		SetPVarInt(playerid, "UsingAnim", 1);
 	}
 	return 1;
@@ -8646,7 +8646,7 @@ CMD:smoke(playerid, params[])
 CMD:wave(playerid, params[])
 {
 	ApplyAnimation(playerid, "ON_LOOKERS", "wave_loop", 4.0, 1, 0, 0, 0, 0);
-	SendClientMessage(playerid, -1, ""chat" To stop the animation type in /stopanim");
+	SendClientMessage(playerid, -1, ""chat" Para parar a animacao, digite /stopanim");
 	SetPVarInt(playerid, "UsingAnim", 1);
 	return 1;
 }
@@ -8670,7 +8670,7 @@ CMD:acmds(playerid)
 		strcat(str,"Level 6: /setadmin, /setpremium, /nuke, /changename, /giveallitems");
         ShowPlayerDialog(playerid,8348,DIALOG_STYLE_MSGBOX,"DayZ - Admin Commands",str,"Fechar","");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	return 1;
 }
 
@@ -8744,13 +8744,13 @@ CMD:r(playerid,params[])
 {
 	if(PlayerHasItem(playerid,"Radio Device"))
 	{
-	    if(isnull(params)) return SendClientMessage(playerid, -1,""chat" /r [radio chat]");
+	    if(isnull(params)) return SendClientMessage(playerid, -1,""chat" /r [mensagem de radio]");
 	    new string[128];
 
 	    format(string, sizeof(string), ""COL_YELLOW"((RADIO TRANSMITTER))"COL_GREY" %s Says: (( %s ))", PlayerName(playerid), params);
 	    ProxDetector(pInfo[playerid][pRadioFreq], playerid, string, COLOR_GREY);
 	}
-	else return SendClientMessage(playerid,-1,""chat" You don't have an radio!");
+	else return SendClientMessage(playerid,-1,""chat" Voce nao tem um radio!");
     return 1;
 }
 
@@ -8789,10 +8789,10 @@ CMD:ooc(playerid, params[])
 			    SendGlobal(9999.0, playerid, string, COLOR_GREY);
 			    globalChat[playerid] = gettime();
 			}
-			else return SendClientMessage(playerid, -1, ""chat" You must have global chat enabled to do this, /gon");
+			else return SendClientMessage(playerid, -1, ""chat" Voce precisa ativar o chat global: /gon");
 		}
 	}
-	else return SendClientMessage(playerid,-1,""chat" You don't have an radio!");
+	else return SendClientMessage(playerid,-1,""chat" Voce nao tem um radio!");
 	return 1;
 }
 
@@ -8800,23 +8800,23 @@ CMD:report(playerid,params[])
 {
 	new targetid,reason[105],reportstring[128];
 	if(sscanf(params, "us[105]", targetid,reason)) return SendClientMessage(playerid,-1,""chat" /report [playerid] [reason]");
-	if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,"*"COL_RED" Player is not online");
-	if(targetid == playerid) return SendClientMessage(playerid,-1,"*"COL_RED" You cannot report yourself!");
+	if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,"*"COL_RED" O jogador nao esta online");
+	if(targetid == playerid) return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode denunciar a si mesmo!");
 
 	if(!IsPlayerNPC(targetid))
 	{
 		if(pInfo[playerid][IsPlayerMuted] == 0)
 		{
-			SendClientMessage(playerid,-1,"*"COL_LGREEN" Your report has been sent to the online admins!");
+			SendClientMessage(playerid,-1,"*"COL_LGREEN" Sua denuncia foi enviada aos administradores online!");
 
 			format(reportstring,sizeof(reportstring), ""chat""COL_YELLOW" Player %s(%d) reported %s(%d)"COL_WHITE" (Reason: %s)", PlayerName(playerid),playerid,PlayerName(targetid),targetid,reason);
 			SendMessageToAllAdmins(reportstring,-1);
 		}
 		else {
-			SendClientMessage(playerid,-1,"*"COL_RED" You cannot report a player while be muted");
+			SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode denunciar enquanto estiver silenciado");
 		}
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You cannot report an NPC");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode denunciar um NPC");
 	return 1;
 }
 
@@ -8829,7 +8829,7 @@ CMD:ask(playerid,params[])
 	{
 		if(pInfo[playerid][IsPlayerMuted] == 0)
 		{
-			SendClientMessage(playerid,-1,"*"COL_LGREEN" Your question has been sent to the online helpers!");
+			SendClientMessage(playerid,-1,"*"COL_LGREEN" Sua pergunta foi enviada aos ajudantes online!");
 			format(sendtohelpers,sizeof(sendtohelpers),"*"COL_YELLOW" Player %s(%i) has asked a question use /respond [id] [answer]",PlayerName(playerid),playerid);
 			format(helpstr,sizeof(helpstr),"* [QUESTION] %s",askstr);
 			SendMessageToAllHelpers(sendtohelpers,-1);
@@ -8837,7 +8837,7 @@ CMD:ask(playerid,params[])
 			pInfo[playerid][pSpamAsk] = gettime();
 		}
 		else {
-			SendClientMessage(playerid,-1,"*"COL_RED" You cannot report a player while be muted");
+			SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode denunciar enquanto estiver silenciado");
 		}
 	}
 	return 1;
@@ -8858,7 +8858,7 @@ CMD:respond(playerid,params[])
 		format(str3,sizeof(str3),"*"COL_LGREEN" Helper %s(%i) has responded to %s(%i) question!",PlayerName(playerid), playerid, PlayerName(targetid), targetid);
 		SendMessageToAllHelpers(str3,-1);
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You are not an helper to use this command!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao e ajudante para usar este comando!");
 	return 1;
 }
 
@@ -8883,7 +8883,7 @@ CMD:admins(playerid, params[])
 		}
  		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No admins online");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" You cannot view admins online (You need 25 hours IG time)");
+	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce precisa de 25 horas jogadas para ver os admins online");
     return 1;
 }
 
@@ -8908,7 +8908,7 @@ CMD:premiums(playerid, params[])
 		}
  		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No premium members online");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" You cannot view vips online (You need 1 Hour IG time)");
+	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce precisa de 1 hora jogada para ver os VIPs online");
     return 1;
 }
 
@@ -8931,9 +8931,9 @@ CMD:helpers(playerid, params[])
 	        }
 	        ShowPlayerDialog(playerid,DIALOG_VIPS,DIALOG_STYLE_MSGBOX,"Online Helpers",adminstring,"Fechar","");
 		}
- 		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" No helpers online at the moment!");
+ 		else return SendClientMessage(playerid,-1,"*"COL_LGREEN" Nao ha ajudantes online no momento!");
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" You cannot view helpers online (You need 1 Hour IG time)");
+	else return SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce precisa de 1 hora jogada para ver os ajudantes online");
     return 1;
 }
 
@@ -8955,7 +8955,7 @@ CMD:info(playerid,params[])
         {
             new targetid;
             if(sscanf(params, "u", targetid)) return SendClientMessage(playerid,-1,"*"COL_RED" /info [playerid]");
-            if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,"*"COL_RED" Player is not online");
+            if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,"*"COL_RED" O jogador nao esta online");
 
 			new str[1200],Float:fPos[3];
    			new Float:vehhp;
@@ -8970,11 +8970,11 @@ CMD:info(playerid,params[])
 			pInfo[targetid][pWarnings],pInfo[targetid][IsPlayerMuted],GetAdminName(targetid),pInfo[targetid][pPremium],TimeConvert(pInfo[targetid][pAliveTime]),pInfo[targetid][Murders],
 			pInfo[targetid][pBlood],pInfo[targetid][Humanity],GetPlayerSkin(targetid),DayZSA_GetWeaponName(targetid),GetPlayerAmmo(targetid),GetPlayerVehicleID(targetid),vInfo[GetPlayerVehicleID(targetid)][vehicleTires],
 			vInfo[GetPlayerVehicleID(targetid)][vehicleFuel],vInfo[GetPlayerVehicleID(targetid)][vehicleEngine],vehhp);
-			ShowPlayerDialog(playerid,6365,DIALOG_STYLE_MSGBOX,"Viewing player info",str,"Fechar","");
+			ShowPlayerDialog(playerid,6365,DIALOG_STYLE_MSGBOX,"Informacoes do jogador",str,"Fechar","");
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -8983,15 +8983,15 @@ CMD:ban(playerid, params[])
 {
     if(pInfo[playerid][pAdminLevel] >= 2)
     {
-		if(sscanf(params, "us[128]", ban_target, ban_reason)) return SendClientMessage(playerid, -1, ""chat" Correct usage -> /ban <player> <reason>");
-		if(!IsPlayerConnected(ban_target)) return SendClientMessage(playerid, -1, ""chat" Player was not found!");
+		if(sscanf(params, "us[128]", ban_target, ban_reason)) return SendClientMessage(playerid, -1, ""chat" Uso correto -> /ban <player> <reason>");
+		if(!IsPlayerConnected(ban_target)) return SendClientMessage(playerid, -1, ""chat" Jogador nao encontrado!");
 		new string[220];
 		format(string, sizeof(string), ""chat" %s %s has banned %s PERM [Reason: %s]",GetAdminName(playerid),PlayerName(playerid),PlayerName(ban_target), ban_reason);
 		SendMessageToAllAdmins(string, -1);
 		jBan(ban_target, playerid, ban_reason, 0, 1);
 	}
 	else {
-		SendClientMessage(playerid,-1,""chat" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,""chat" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9000,16 +9000,16 @@ CMD:tban(playerid, params[])
 {
     if(pInfo[playerid][pAdminLevel] >= 2)
     {
-		if(sscanf(params, "uis[128]", ban_target, ban_time, ban_reason)) return SendClientMessage(playerid, -1, ""chat" Correct usage -> /ban <player> <time (minutes)> <reason>");
-		if(!IsPlayerConnected(ban_target)) return SendClientMessage(playerid, -1, ""chat" Player was not found!");
-		if(ban_time < 0) SendClientMessage(playerid, -1, ""chat" Please input a valid ban time!");
+		if(sscanf(params, "uis[128]", ban_target, ban_time, ban_reason)) return SendClientMessage(playerid, -1, ""chat" Uso correto -> /ban <player> <time (minutes)> <reason>");
+		if(!IsPlayerConnected(ban_target)) return SendClientMessage(playerid, -1, ""chat" Jogador nao encontrado!");
+		if(ban_time < 0) SendClientMessage(playerid, -1, ""chat" Informe um tempo de banimento valido!");
 		new string[220];
 		format(string, sizeof(string), ""chat" %s %s has banned %s for %i minutes [Reason: %s]",GetAdminName(playerid),PlayerName(playerid),PlayerName(ban_target), ban_time, ban_reason);
 		SendMessageToAllAdmins(string, -1);
 		jBan(ban_target, playerid, ban_reason, ban_time, 1);
 	}
 	else {
-		SendClientMessage(playerid,-1,""chat" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,""chat" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9019,13 +9019,13 @@ CMD:unbanip(playerid, params[])
 	if(pInfo[playerid][pAdminLevel] >= 2)
     {
         new unban_ip[24];
-		if(sscanf(params, "s[24]", unban_ip)) return SendClientMessage(playerid, -1, ""chat" Correct usage -> /unbanip <name>");
+		if(sscanf(params, "s[24]", unban_ip)) return SendClientMessage(playerid, -1, ""chat" Uso correto -> /unbanip <name>");
 		jUnbanIP(unban_ip);
 		format(ban_reason, MAX_REASON_LENGTH, ""chat" You have un-banned %s", unban_ip);
 		SendClientMessage(playerid, -1, ban_reason);
  	}
 	else {
-		SendClientMessage(playerid,-1,""chat" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,""chat" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9035,13 +9035,13 @@ CMD:unbanname(playerid, params[])
 	if(pInfo[playerid][pAdminLevel] >= 2)
     {
         new unban_name[24];
-		if(sscanf(params, "s[24]", unban_name)) return SendClientMessage(playerid, -1, ""chat" Correct usage -> /unbanname <name>");
+		if(sscanf(params, "s[24]", unban_name)) return SendClientMessage(playerid, -1, ""chat" Uso correto -> /unbanname <name>");
 		jUnbanName(unban_name);
 		format(ban_reason, MAX_REASON_LENGTH, ""chat" You have un-banned %s", unban_name);
 		SendClientMessage(playerid, -1, ban_reason);
 	}
 	else {
-		SendClientMessage(playerid,-1,""chat" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,""chat" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9091,7 +9091,7 @@ CMD:cc(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-	    SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+	    SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9101,7 +9101,7 @@ CMD:giveallitems(playerid,params[])
 	if(pInfo[playerid][pAdminLevel] >= 6)
 	{
 		new string[64], amount;
-	    if(sscanf(params, "is[64]", amount,string)) return SendClientMessage(playerid,-1,""chat" /giveallitem [amount] [item name] (MAKE SURE IT'S NOT INVALID!)");
+	    if(sscanf(params, "is[64]", amount,string)) return SendClientMessage(playerid,-1,""chat" /giveallitem [quantidade] [nome do item] (USE UM ITEM VALIDO!)");
 
 		foreach(Player,i)
 		{
@@ -9121,7 +9121,7 @@ CMD:setadmin(playerid,params[])
 	{
 		new targetid,level,string[180];
 		if(sscanf(params, "ud", targetid, level)) return  SendClientMessage(playerid,-1,""chat" /setadmin [playerid] [level]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 		if(level < 0 || level > 6) return SendClientMessage(playerid,-1,""chat"  Admin levels are ONLY between 1-5");
 
         pInfo[targetid][pAdminLevel] = level;
@@ -9130,7 +9130,7 @@ CMD:setadmin(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9141,7 +9141,7 @@ CMD:setpremium(playerid,params[])
 	{
 		new targetid,level,string[200];
 		if(sscanf(params, "ud", targetid, level)) return  SendClientMessage(playerid,-1,""chat" /setpremium [playerid] [level]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 		if(level < 0 || level > 4) return SendClientMessage(playerid,-1,""chat" Premium levels are ONLY between 1-4");
 
         pInfo[targetid][pPremium] = level;
@@ -9150,7 +9150,7 @@ CMD:setpremium(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9161,7 +9161,7 @@ CMD:sethelper(playerid,params[])
 	{
 		new targetid,level,string[200];
 		if(sscanf(params, "ud", targetid, level)) return  SendClientMessage(playerid,-1,""chat" /sethelper [playerid] [level]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 		if(level < 0 || level > 1) return SendClientMessage(playerid,-1,""chat" Helper levels are ONLY between 0-1");
 
         pInfo[targetid][Helper] = level;
@@ -9170,7 +9170,7 @@ CMD:sethelper(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9181,7 +9181,7 @@ CMD:slap(playerid,params[])
 	{
 	    new targetid,string[128];
 		if(sscanf(params, "u", targetid)) return  SendClientMessage(playerid,-1,""chat" /slap [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		new Float:posxx[3];
 		GetPlayerPos(targetid, posxx[0], posxx[1], posxx[2]);
@@ -9199,7 +9199,7 @@ CMD:slap(playerid,params[])
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9217,7 +9217,7 @@ CMD:spawncratem(playerid,params[])
 		return 1;
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9227,7 +9227,7 @@ CMD:wslap(playerid,params[])
 	{
 	    new targetid,string[128];
 		if(sscanf(params, "u", targetid)) return  SendClientMessage(playerid,-1,""chat" /wslap [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		new Float:posxx[3];
 
@@ -9238,7 +9238,7 @@ CMD:wslap(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9257,7 +9257,7 @@ CMD:a(playerid,params[])
 		SendMessageToAllAdmins(adminstring, -1);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9276,7 +9276,7 @@ CMD:pchat(playerid,params[])
 		SendMessageToAllPremium(adminstring, -1);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right premium permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao premium para este comando!");
 	}
 	return 1;
 }
@@ -9298,16 +9298,16 @@ CMD:pm(playerid,params[])
 				SendClientMessage(playerid,-1,str2);
 			}
 			else {
-				SendClientMessage(playerid,-1,"*"COL_RED" This player is not accepting any personal messages");
+				SendClientMessage(playerid,-1,"*"COL_RED" Este jogador nao aceita mensagens privadas");
 			}
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You are muted you cannot send a personal message!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce esta silenciado e nao pode enviar mensagens privadas!");
 	}
 	return 1;
 }
 
-CMD:blockpm(playerid) return pInfo[playerid][pPM] = 1, SendClientMessage(playerid,-1,"*"COL_LGREEN" You are now blocking personal messages");
-CMD:unblockpm(playerid) return pInfo[playerid][pPM] = 0, SendClientMessage(playerid,-1,"*"COL_LGREEN" You are not blocking any more personal messages");
+CMD:blockpm(playerid) return pInfo[playerid][pPM] = 1, SendClientMessage(playerid,-1,"*"COL_LGREEN" Agora voce bloqueia mensagens privadas");
+CMD:unblockpm(playerid) return pInfo[playerid][pPM] = 0, SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce nao esta mais bloqueando mensagens privadas");
 
 CMD:ann(playerid,params[])
 {
@@ -9317,7 +9317,7 @@ CMD:ann(playerid,params[])
     	GameTextForAll(params,5000,3);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_LGREEN" You must be a level 4 admin");
+		SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce precisa ser administrador nivel 4");
 	}
 	return 1;
 }
@@ -9330,7 +9330,7 @@ CMD:ann2(playerid,params[])
     	UpdateAnnouncement(params);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_LGREEN" You must be a level 3 admin");
+		SendClientMessage(playerid,-1,"*"COL_LGREEN" Voce precisa ser administrador nivel 3");
 	}
 	return 1;
 }
@@ -9341,7 +9341,7 @@ CMD:warn(playerid,params[])
 	{
 	    new targetid,reason[105],string[128];
 	    if(sscanf(params, "us[105]", targetid, reason)) return SendClientMessage(playerid,-1,""chat" /warn [playerid] [reason]");
-	    if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+	    if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		new sentstring[128];
 
@@ -9360,7 +9360,7 @@ CMD:warn(playerid,params[])
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9376,7 +9376,7 @@ CMD:saveall(playerid)
 				{
 					SaveStats(i);
 					SendClientMessage(playerid,-1,"*"COL_GREEN" Saving everyone stats.");
-					SendClientMessageToAll(-1, "*"COL_RED" The Developer of the server has initialized a save stat (globally) This will cause lag. Please stand by");
+					SendClientMessageToAll(-1, "*"COL_RED" O desenvolvedor iniciou um salvamento global. Pode haver lentidao. Aguarde");
 				}
 			}
 		}
@@ -9392,7 +9392,7 @@ CMD:savestats(playerid)
 		    if(pInfo[playerid][IsPlayerSpawned] == 1)
 		    {
 				SaveStats(playerid);
-				SendClientMessage(playerid,-1,"*"COL_GREEN" You have saved your stats");
+				SendClientMessage(playerid,-1,"*"COL_GREEN" Seus dados foram salvos");
 				pInfo[playerid][pSaveSpam] = gettime();
 			}
 		}
@@ -9423,7 +9423,7 @@ CMD:setweather(playerid,params[])
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9434,14 +9434,14 @@ CMD:ip(playerid, params[])
     {
 		new targetid,playerip[16],string[64];
 		if(sscanf(params, "u", targetid, playerip)) return SendClientMessage(playerid,-1,""chat" /ip [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		GetPlayerIp(targetid, playerip, sizeof(playerip));
 		format(string, sizeof(string), "*"COL_RED" IP of %s %s", PlayerName(targetid), playerip);
 		SendClientMessage(playerid, -1, string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9452,7 +9452,7 @@ CMD:akill(playerid,params[])
     {
 		new targetid,string[128];
 		if(sscanf(params, "u", targetid)) return SendClientMessage(playerid,-1,""chat" /akill [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		SetPlayerHealth(targetid,0.0);
 
@@ -9460,7 +9460,7 @@ CMD:akill(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9471,7 +9471,7 @@ CMD:nuke(playerid,params[])
     {
 		new targetid,string[128];
 		if(sscanf(params, "u", targetid)) SendClientMessage(playerid,-1,""chat" /nuke [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		new Float:x,Float:y,Float:z;
 		GetPlayerPos(targetid,Float:x,Float:y,Float:z);
@@ -9481,7 +9481,7 @@ CMD:nuke(playerid,params[])
 		SendClientMessageToAll(-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9492,7 +9492,7 @@ CMD:get(playerid,params[])
     {
 		new targetid;
 		if(sscanf(params, "u", targetid)) SendClientMessage(playerid,-1,""chat" /get [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
         new Float:x, Float:y, Float:z;
 		GetPlayerPos(playerid, x, y, z);
@@ -9508,7 +9508,7 @@ CMD:get(playerid,params[])
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9521,10 +9521,10 @@ CMD:spec(playerid, params[])
             new id2;
             new targetid;
             if(sscanf(params,"u", id2)) return SendClientMessage(playerid,-1, "*"COL_GREEN" /spec [playerid]");
-            if(id2 == playerid) return SendClientMessage(playerid,-1, "*"COL_GREEN" You cannot spec yourself.");
-            if(id2 == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "*"COL_GREEN" Player not found!");
-            if(IsPlayerNPC(id2)) return SendClientMessage(playerid, -1, "Sir you cannot spectate a zombie!");
-            if(IsSpecing[playerid] == 1) return SendClientMessage(playerid,-1, "*"COL_GREEN" You are already spectating someone.");
+            if(id2 == playerid) return SendClientMessage(playerid,-1, "*"COL_GREEN" Voce nao pode observar a si mesmo.");
+            if(id2 == INVALID_PLAYER_ID) return SendClientMessage(playerid, -1, "*"COL_GREEN" Jogador nao encontrado!");
+            if(IsPlayerNPC(id2)) return SendClientMessage(playerid, -1, "Voce nao pode observar um zumbi!");
+            if(IsSpecing[playerid] == 1) return SendClientMessage(playerid,-1, "*"COL_GREEN" Voce ja esta observando alguem.");
             GetPlayerPos(playerid,SpecX[playerid],SpecY[playerid],SpecZ[playerid]);
             Inter[playerid] = GetPlayerInterior(playerid);
             vWorld[playerid] = GetPlayerVirtualWorld(playerid);
@@ -9568,10 +9568,10 @@ CMD:spec(playerid, params[])
         }
    		else
 		{
-        	SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+        	SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
     	}
 	}
-	else return SendClientMessage(playerid,-1,"*"COL_RED" You cannot spectate while dead, noob!");
+	else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode observar enquanto estiver morto!");
 	return 1;
 }
 
@@ -9580,7 +9580,7 @@ CMD:specoff(playerid, params[])
 {
     if(pInfo[playerid][pAdminLevel] >= 1)
     {
-        if(IsSpecing[playerid] == 0) return SendClientMessage(playerid,-1,"*"COL_RED" You are not spectating anyone.");
+        if(IsSpecing[playerid] == 0) return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao esta observando ninguem.");
         TogglePlayerSpectating(playerid, 0);
         for (new i = 0; i < 13; i++)
         {
@@ -9588,7 +9588,7 @@ CMD:specoff(playerid, params[])
         }
     }
     else {
-    SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+    SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 }
 	return 1;
 }
@@ -9599,14 +9599,14 @@ CMD:gotop(playerid,params[])
     {
 		new targetid;
 		if(sscanf(params, "u", targetid)) SendClientMessage(playerid,-1,""chat" /gotop [playerid]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		new Float:x,Float:y,Float:z;
 		GetPlayerPos(targetid,Float:x,Float:y,Float:z);
         SetPlayerPos_Allow(playerid, Float:x, Float:y, Float:z);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9617,7 +9617,7 @@ CMD:sethumanity(playerid,params[])
 	{
 	    new targetid,humanity,string[128];
 	    if(sscanf(params, "ui", targetid,humanity)) return SendClientMessage(playerid,-1,""chat" /sethumanity [id] [humanity]");
-   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		format(string,sizeof(string),"*"COL_RED" %s %s has set player %s humanity to %i", GetAdminName(playerid),PlayerName(playerid),PlayerName(targetid),humanity);
 		SendMessageToAllAdmins(string,-1);
@@ -9628,7 +9628,7 @@ CMD:sethumanity(playerid,params[])
 		pInfo[targetid][Humanity] = humanity;
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9639,7 +9639,7 @@ CMD:mute(playerid,params[])
 	{
 	    new targetid,reason[105],string[128];
 	    if(sscanf(params, "us[105]", targetid,reason)) return SendClientMessage(playerid,-1,""chat" /mute [playerid] [reason]");
-   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		pInfo[targetid][IsPlayerMuted] = 1;
 
@@ -9650,7 +9650,7 @@ CMD:mute(playerid,params[])
 		SendClientMessage(targetid,-1,string);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9661,7 +9661,7 @@ CMD:unmute(playerid,params[])
 	{
 	    new targetid,string[128];
 	    if(sscanf(params, "u", targetid)) return SendClientMessage(playerid,-1,""chat" /unmute [playerid]");
-   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+   		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		if(pInfo[targetid][IsPlayerMuted] == 1)
 		{
@@ -9673,11 +9673,11 @@ CMD:unmute(playerid,params[])
 		}
 		else
 		{
-		    SendClientMessage(playerid,-1,"*"COL_RED" Player isn't muted");
+		    SendClientMessage(playerid,-1,"*"COL_RED" O jogador nao esta silenciado");
 		}
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9703,7 +9703,7 @@ CMD:respawnallcars(playerid,params[])
 		SendMessageToAllAdmins(str,-1);
 	}
 	else {
-		SendClientMessage(playerid,-1,""chat""COL_RED" You do not meet the requirements of the admin level");
+		SendClientMessage(playerid,-1,""chat""COL_RED" Voce nao atende aos requisitos do nivel de administrador");
 	}
 	return 1;
 }
@@ -9735,7 +9735,7 @@ CMD:respawncars(playerid,params[])
 		SendMessageToAllAdmins(str,-1);
 	}
 	else {
-		SendClientMessage(playerid,-1,""chat""COL_RED" You do not meet the requirements of the admin level");
+		SendClientMessage(playerid,-1,""chat""COL_RED" Voce nao atende aos requisitos do nivel de administrador");
 	}
 	return 1;
 }
@@ -9746,7 +9746,7 @@ CMD:kick(playerid,params[])
     {
 		new targetid,reason[105],string[180];
 		if(sscanf(params, "us[105]", targetid,reason)) return SendClientMessage(playerid,-1,""chat" /kick [playerid] [reason]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		if(!IsPlayerNPC(targetid))
 		{
@@ -9754,10 +9754,10 @@ CMD:kick(playerid,params[])
 			SendMessageToAllAdmins(string,-1);
 			Kick(targetid);
 		}
-		else return SendClientMessage(playerid,-1,"*"COL_RED" You cannot kick an NPC, this has been logged and sent to the server emergency log list!");
+		else return SendClientMessage(playerid,-1,"*"COL_RED" Voce nao pode expulsar um NPC! A tentativa foi registrada!");
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -9768,7 +9768,7 @@ CMD:clearanim(playerid,params[])
     {
 		new targetid,reason[105],string[180];
 		if(sscanf(params, "us[105]", targetid,reason)) return SendClientMessage(playerid,-1,""chat" /clearanim [playerid] [reason]");
-		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" Player is not online");
+		if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid,-1,""chat" O jogador nao esta online");
 
 		format(string, sizeof(string), "*"COL_RED" %s %s has cleared %s animations"COL_WHITE" [Reason: %s]",GetAdminName(playerid),PlayerName(playerid),PlayerName(targetid),reason);
 		SendClientMessageToAll(-1,string);
@@ -9776,7 +9776,7 @@ CMD:clearanim(playerid,params[])
 		ClearAnimations(targetid);
 	}
 	else {
-		SendClientMessage(playerid,-1,"*"COL_RED" You do not have the right admin permissions for this command!");
+		SendClientMessage(playerid,-1,"*"COL_RED" Voce nao tem permissao de administrador para este comando!");
 	}
 	return 1;
 }
@@ -10912,7 +10912,7 @@ stock CheckBars(playerid)
 				format(str2,sizeof(str2),"*"COL_RED" %s(%i) has starved to death!",PlayerName(playerid),playerid);
 				ProxDetector(60.0, playerid, str2, COLOR_GREY);
 				pInfo[playerid][pHunger] = 2500;
-				SendClientMessage(playerid,-1,"*"COL_RED" You starved to death!");
+				SendClientMessage(playerid,-1,"*"COL_RED" Voce morreu de fome!");
 			}
 
 			if(pInfo[playerid][pThrist] <= 0)
@@ -10922,7 +10922,7 @@ stock CheckBars(playerid)
 				format(str2,sizeof(str2),"*"COL_RED" %s(%i) has died of thirst!",PlayerName(playerid),playerid);
 				ProxDetector(60.0, playerid, str2, COLOR_GREY);
 				pInfo[playerid][pThrist] = 1000;
-				SendClientMessage(playerid,-1,"*"COL_RED" You died of thirst!");
+				SendClientMessage(playerid,-1,"*"COL_RED" Voce morreu de sede!");
 			}
 
 			if(pInfo[playerid][pBlood] <= 0)
@@ -10932,7 +10932,7 @@ stock CheckBars(playerid)
 				format(str2,sizeof(str2),"*"COL_RED" %s(%i) has died of blood loss!",PlayerName(playerid),playerid);
 				ProxDetector(60.0, playerid, str2, COLOR_GREY);
 				pInfo[playerid][pBlood] = 12000;
-				SendClientMessage(playerid,-1,"*"COL_RED" You died of blood loss!");
+				SendClientMessage(playerid,-1,"*"COL_RED" Voce morreu por perda de sangue!");
 			}
 		}
 	}
@@ -11201,7 +11201,7 @@ function SpawnVars(playerid)
 				if(pInfo[playerid][IsPlayerBandit] == 0)
 				{
 					SetPlayerSkin(playerid,BANDIT);
-					SendClientMessage(playerid,-1,""COL_GREY" You are an bandit now!");
+					SendClientMessage(playerid,-1,""COL_GREY" Agora voce e um bandido!");
 					pInfo[playerid][IsPlayerBandit] = 1;
 					RemovePlayerAttachedObject(playerid, 4);
 					SetPlayerAttachedObject(playerid,4,19033,2,0.094999,0.076999,-0.012000,2.900000,83.200004,94.900001,1.000000,1.000000,1.000000);
@@ -11213,7 +11213,7 @@ function SpawnVars(playerid)
 				if(pInfo[playerid][IsPlayerHero] == 0)
 				{
 					SetPlayerSkin(playerid,HERO);
-					SendClientMessage(playerid,-1,""COL_GREY" You are an hero now!");
+					SendClientMessage(playerid,-1,""COL_GREY" Agora voce e um heroi!");
 					pInfo[playerid][IsPlayerHero] = 1;
 				}
 			}
@@ -11278,7 +11278,7 @@ stock AddSlotToInventoryWorld(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 8)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11294,7 +11294,7 @@ stock AddSlotToInventoryWorld(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 16)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11310,7 +11310,7 @@ stock AddSlotToInventoryWorld(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 28)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11326,7 +11326,7 @@ stock AddSlotToInventoryWorld(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 38)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11346,7 +11346,7 @@ stock AddSlotToInventoryLoot(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 8)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11362,7 +11362,7 @@ stock AddSlotToInventoryLoot(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 16)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11378,7 +11378,7 @@ stock AddSlotToInventoryLoot(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 28)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11394,7 +11394,7 @@ stock AddSlotToInventoryLoot(playerid,addItem[],amount)
 	    {
 	    	if(pInfo[playerid][BackpackSlotsUsed] == 38)
 	    	{
-				SendClientMessage(playerid,-1,""chat" Your backpack is full");
+				SendClientMessage(playerid,-1,""chat" Sua mochila esta cheia");
 			}
 			else
 			{
@@ -11678,21 +11678,21 @@ public OnPlayerUseItem(playerid,ItemName[])
     {
         if(!strcmp(ItemName,"Empty Water Bottle",true))
         {
-            SendClientMessage(playerid,-1,"*"COL_RED" This item is not useable enter an area that is swimmable to refill the water bottle!");
+            SendClientMessage(playerid,-1,"*"COL_RED" Para encher a garrafa, entre em uma area com agua!");
 		}
   		if(!strcmp(ItemName,"Rope",true))
         {
-            SendClientMessage(playerid,-1,"*"COL_RED" Write /kidnap when you're near a player.");
+            SendClientMessage(playerid,-1,"*"COL_RED" Digite /kidnap quando estiver perto de um jogador.");
 		}
 
         if(!strcmp(ItemName,"Raw Meat",true))
         {
-			SendClientMessage(playerid, -1, ""chat" You cannot eat raw food. Find some wood and Lighter to cook this!");
+			SendClientMessage(playerid, -1, ""chat" Voce nao pode comer comida crua. Encontre madeira e isqueiro para cozinhar!");
 		}
 
 		if(!strcmp(ItemName, "Cooked Meat",true))
 		{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 1250;
 			pInfo[playerid][pBlood] += 2500;
 			RemoveSlotToInventory(playerid,"Cooked Meat",1);
@@ -11704,11 +11704,11 @@ public OnPlayerUseItem(playerid,ItemName[])
 		}
 		if(!strcmp(ItemName,"Dirty Water Bottle",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 98) return SendClientMessage(playerid,-1,"*"COL_GREY" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 98) return SendClientMessage(playerid,-1,"*"COL_GREY" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] -= 30;
 
 			RemoveSlotToInventory(playerid,"Dirty Water Bottle",1);
-			SendClientMessage(playerid, COLOR_RED, "You lost thirst while drinking dirty water");
+			SendClientMessage(playerid, COLOR_RED, "Voce ficou com mais sede ao beber agua suja");
 			AddSlotToInventoryWorld(playerid,"Empty Water Bottle",1);
 			if(!IsPlayerInAnyVehicle(playerid))
 	    	{
@@ -11720,7 +11720,7 @@ public OnPlayerUseItem(playerid,ItemName[])
         {
             if(pInfo[playerid][pInfection] == 0)
             {
-				SendClientMessage(playerid, -1, "*"COL_RED" You are not infected of any sort!");
+				SendClientMessage(playerid, -1, "*"COL_RED" Voce nao esta infectado!");
 			}
 			else
 			{
@@ -11728,7 +11728,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 				PlayerTextDrawHide(playerid, LegBroken[playerid]);
 				SetPlayerDrunkLevel(playerid, 0);
 				KillTimer(pInfo[playerid][Bleeding]);
-			    SendClientMessage(playerid, -1, ""chat" You have sucessfully used antibiotics. You have been cured. If screen still dark use painkiller!");
+			    SendClientMessage(playerid, -1, ""chat" Antibiotico utilizado! Voce foi curado. Se a tela continuar escura, use analgesico!");
 			}
 		}
 
@@ -11743,7 +11743,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 					defer ResetAction(playerid, ACTION_ANIMATION);
 				}
 			}
-			else SendClientMessage(playerid, -1, ""chat" You need Lighter to start a camp fire!");
+			else SendClientMessage(playerid, -1, ""chat" Voce precisa de um isqueiro para acender a fogueira!");
 		}
 
         if(!strcmp(ItemName,"Lighter",true))
@@ -11757,12 +11757,12 @@ public OnPlayerUseItem(playerid,ItemName[])
 					defer ResetAction(playerid, ACTION_ANIMATION);
 				}
 			}
-			else SendClientMessage(playerid, -1, ""chat" You need some wood to start a camp fire!");
+			else SendClientMessage(playerid, -1, ""chat" Voce precisa de madeira para acender a fogueira!");
 		}
 
 		if(!strcmp(ItemName,"Bandage",true))
 	 	{
-	 	    if(pInfo[playerid][IsPlayerBleeding] == 0) return SendClientMessage(playerid,-1,""chat" You are not bleeding!");
+	 	    if(pInfo[playerid][IsPlayerBleeding] == 0) return SendClientMessage(playerid,-1,""chat" Voce nao esta sangrando!");
 			RemovePlayerAttachedObject(playerid, 2);
 	 		KillTimer(pInfo[playerid][Bleeding]);
 	 		pInfo[playerid][IsPlayerBleeding] = 0;
@@ -11776,7 +11776,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 
 		if(!strcmp(ItemName,"Morphine",true))
 	 	{
-	 	    if(pInfo[playerid][IsPlayerLegBroken] == 0) return SendClientMessage(playerid,-1,""chat" Your leg is not broken!");
+	 	    if(pInfo[playerid][IsPlayerLegBroken] == 0) return SendClientMessage(playerid,-1,""chat" Sua perna nao esta quebrada!");
 			PlayerTextDrawHide(playerid, LegBroken[playerid]);
 	    	pInfo[playerid][IsPlayerLegBroken] = 0;
 			RemoveSlotToInventory(playerid,"Morphine",1);
@@ -11789,7 +11789,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 
 		if(!strcmp(ItemName,"Can of Beans",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 750;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Can of Beans",1);
@@ -11802,7 +11802,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 
 		if(!strcmp(ItemName,"Dirty Pizza Slice",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 950;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Dirty Pizza Slice",1);
@@ -11832,7 +11832,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 
         if(!strcmp(ItemName,"Orange",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 400;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Orange",1);
@@ -11844,7 +11844,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
  		if(!strcmp(ItemName,"Banana",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 300;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Banana",1);
@@ -11856,7 +11856,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
   		if(!strcmp(ItemName,"Tomato",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 400;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Tomato",1);
@@ -11868,7 +11868,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 	  	if(!strcmp(ItemName,"Apple",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 400;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Apple",1);
@@ -11880,7 +11880,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 	  	if(!strcmp(ItemName,"Packet Of Cereals",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 290;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Packet Of Cereals",1);
@@ -11892,7 +11892,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 		if(!strcmp(ItemName,"Burger",true))
 	 	{
-	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" You are not hungry!");
+	 	    if(pInfo[playerid][pHunger] >= 2350) return SendClientMessage(playerid,-1,""chat" Voce nao esta com fome!");
 			pInfo[playerid][pHunger] += 600;
 			pInfo[playerid][pBlood] += random(350);
 			RemoveSlotToInventory(playerid,"Burger",1);
@@ -11987,7 +11987,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 
 		if(!strcmp(ItemName,"Soda Bottle",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 580;
 			RemoveSlotToInventory(playerid,"Soda Bottle",1);
 			if(!IsPlayerInAnyVehicle(playerid))
@@ -11999,14 +11999,14 @@ public OnPlayerUseItem(playerid,ItemName[])
 
 		if(!strcmp(ItemName,"Milk",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 780;
 			RemoveSlotToInventory(playerid,"Milk",1);
 	  	}
 
 		if(!strcmp(ItemName,"Full Water Bottle",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 850;
 			RemoveSlotToInventory(playerid,"Full Water Bottle",1);
 			AddSlotToInventoryWorld(playerid,"Empty Water Bottle",1);
@@ -12018,7 +12018,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 	    if(!strcmp(ItemName,"Fresh Juice",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 850;
 			RemoveSlotToInventory(playerid,"Fresh Juice",1);
 			if(!IsPlayerInAnyVehicle(playerid))
@@ -12029,7 +12029,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 		if(!strcmp(ItemName,"Rum",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 850;
 			RemoveSlotToInventory(playerid,"Rum",1);
 			if(!IsPlayerInAnyVehicle(playerid))
@@ -12040,7 +12040,7 @@ public OnPlayerUseItem(playerid,ItemName[])
 	  	}
 		if(!strcmp(ItemName,"Gin",true))
 	 	{
-	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" You are not thirsty!");
+	 	    if(pInfo[playerid][pThrist] >= 980) return SendClientMessage(playerid,-1,""chat" Voce nao esta com sede!");
 			pInfo[playerid][pThrist] += 850;
 			RemoveSlotToInventory(playerid,"Gin",1);
 			if(!IsPlayerInAnyVehicle(playerid))
@@ -15620,7 +15620,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 	{
 		format(str,sizeof(str),"%s",
 		vInfo[GetVehicleNearID(playerid)][vSlot1]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (1 SLOTS)",str,"Selecionar","Fechar");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Armazenamento do veiculo (1 SLOTS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 2)
@@ -15628,7 +15628,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		format(str,sizeof(str),"%s\n%s",
 		vInfo[GetVehicleNearID(playerid)][vSlot1],
 		vInfo[GetVehicleNearID(playerid)][vSlot2]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (2 SLOTS)",str,"Selecionar","Fechar");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Armazenamento do veiculo (2 SLOTS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 4)
@@ -15638,7 +15638,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		vInfo[GetVehicleNearID(playerid)][vSlot2],
 		vInfo[GetVehicleNearID(playerid)][vSlot3],
 		vInfo[GetVehicleNearID(playerid)][vSlot4]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (4 SLOTS)",str,"Selecionar","Fechar");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Armazenamento do veiculo (4 ESPACOS)",str,"Selecionar","Fechar");
 	}
 
 	if(vInfo[GetVehicleNearID(playerid)][vehicleSlots] == 6)
@@ -15650,7 +15650,7 @@ function DayZSA_DisplayVehicleStorage(playerid)
 		vInfo[GetVehicleNearID(playerid)][vSlot4],
 		vInfo[GetVehicleNearID(playerid)][vSlot5],
 		vInfo[GetVehicleNearID(playerid)][vSlot6]);
-	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage (6 SLOTS)",str,"Selecionar","Fechar");
+	    ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Armazenamento do veiculo (6 SLOTS)",str,"Selecionar","Fechar");
 	}
 	return 1;
 }
@@ -15676,7 +15676,7 @@ function DayZSA_DisplayTent(playerid)
 	Tent[GetTentID(playerid)][tentSlot15],
 	Tent[GetTentID(playerid)][tentSlot16]);
 
-	ShowPlayerDialog(playerid,DIALOG_TENT_VIEW,DIALOG_STYLE_LIST,""COL_WHITE"GEAR Tent"COL_GREEN" (16 SLOTS)",str,"Selecionar","Fechar");
+	ShowPlayerDialog(playerid,DIALOG_TENT_VIEW,DIALOG_STYLE_LIST,""COL_WHITE"GEAR Tent"COL_GREEN" (16 ESPACOS)",str,"Selecionar","Fechar");
 	return 1;
 }
 
@@ -15727,7 +15727,7 @@ stock ShowInventoryStorage(playerid)
 			format(gItemList,sizeof(gItemList),"%s\n%d\t\t%s",gItemList,_GetItemAmountPVar(playerid,item),_GetItemNamePVar(playerid,item));
 		}
 		format(gItemList,sizeof(gItemList),"%s",gItemList);
-		ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Vehicle Storage",gItemList,"Add Item","Close");
+		ShowPlayerDialog(playerid,DIALOG_VEHICLE_STORAGE_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Armazenamento do veiculo",gItemList,"Add Item","Close");
 	}
 	return 1;
 }
@@ -15743,7 +15743,7 @@ stock ShowInventoryTent(playerid)
 			format(gItemList,sizeof(gItemList),"%s\n%d\t\t%s",gItemList,_GetItemAmountPVar(playerid,item),_GetItemNamePVar(playerid,item));
 		}
 		format(gItemList,sizeof(gItemList),"%s",gItemList);
-		ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Visualizando barraca (16 SLOTS)",gItemList,"Add Item","Close");
+		ShowPlayerDialog(playerid,DIALOG_TENT_VIEW_S2,DIALOG_STYLE_LIST,""COL_GREEN"GEAR Visualizando barraca (16 ESPACOS)",gItemList,"Add Item","Close");
 	}
 	return 1;
 }
